@@ -32,6 +32,7 @@ export default function Home() {
 
       {/* Control Center */}
       <div className='absolute flex items-center justify-center bg-gray-800 w-52 h-52'>
+        <div>icld dev branch</div>
         <input
           className='absolute h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128'
           type='range'
