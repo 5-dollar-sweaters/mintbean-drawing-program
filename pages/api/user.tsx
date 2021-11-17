@@ -17,6 +17,7 @@ export default async function user(req: NextApiRequest, res: NextApiResponse) {
         email: session?.user?.email,
       },
     });
+    console.log('an excuse');
     console.log(activeUser);
     res.json(activeUser);
   } else {
