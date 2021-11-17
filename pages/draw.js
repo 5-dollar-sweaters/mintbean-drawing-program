@@ -68,9 +68,9 @@ export default function Draw() {
       </div>
 
       {/* Canvas div  className='main' */}
-      <div className=''>
+      <div className='flex items-center justify-center h-screen bg-gray-400'>
         <div
-          className={` main  w- h-screen  bg-gray-400 flex items-center justify-center rounded-3xl overflow-hidden`}
+          className={` main    bg-gray-400 flex items-center justify-center  rounded-3xl  overflow-hidden`}
         />
       </div>
     </div>
