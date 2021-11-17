@@ -1,26 +1,18 @@
-<<<<<<< HEAD:pages/draw.js
-import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Head from "next/head";
+import { ColorGrid } from "../components/Draw/colorGrid";
 import CanvasDraw from "react-canvas-draw";
-import { useUser } from "@auth0/nextjs-auth0";
-import { colors } from "../lib/data/colors";
-=======
-import ReactDOM from 'react-dom';
-import Head from 'next/head';
-import CanvasDraw from 'react-canvas-draw';
-import useSWR from 'swr';
-import prisma from '../lib/prisma/prisma';
-import { useState, useEffect, useRef } from 'react';
+import useSWR from "swr";
+import prisma from "../lib/prisma/prisma";
+import { useState, useEffect, useRef } from "react";
 import {
   GetServerSideProps,
   NextPage,
   InferGetServerSidePropsType,
-} from 'next';
-import { useUser, getSession } from '@auth0/nextjs-auth0';
+} from "next";
+import { useUser, getSession } from "@auth0/nextjs-auth0";
 // import { fetcher } from '../lib/swr/fetcher';
-import { useStore } from '../lib/zustand/store';
->>>>>>> 92812f6a807d8a745254afb70acfc5f2726b9d10:pages/draw.tsx
+import { useStore } from "../lib/zustand/store";
 
 export const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -30,18 +22,14 @@ const Draw: NextPage = (
   const [brushRadius, setBrushRadius] = useState(12);
   const [canvasWidth, setCanvasWidth] = useState(500);
   const [canvasHeight, setCanvasHeight] = useState(500);
-<<<<<<< HEAD:pages/draw.js
   const [lazyRadius, setLazyRadius] = useState(30);
-
-  const [color, setColor] = useState("#B082FF");
-=======
+  const [color, setColor] = useState("#000000");
   const canvasRef: any = useRef();
   const { activeUser, setActiveUser } = useStore();
   const { user } = useUser();
   type DATA_TO_SAVE = { sketchId: string; userId: string };
 
-  const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
->>>>>>> 92812f6a807d8a745254afb70acfc5f2726b9d10:pages/draw.tsx
+  const { data, error, mutate } = useSWR(user && "/api/user", fetcher);
 
   console.log(data);
   useEffect(() => {
@@ -67,7 +55,7 @@ const Draw: NextPage = (
     const savedDrawing = canvasRef?.current?.getSaveData();
     const dataToSave: DATA_TO_SAVE = {
       sketchId: savedDrawing,
-      userId: 'fornow',
+      userId: "fornow",
     };
     try {
       // await saveData(dataToSave);
@@ -85,115 +73,10 @@ const Draw: NextPage = (
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-<<<<<<< HEAD:pages/draw.js
-      <div id="left-sidebar">
-        {/* Control Center */}
-        <div className="relative z-10 flex flex-col items-center bg-gray-800 justify-evenly w-52 h-52">
-          {/* Brush Stroke */}
-          <input
-            className="relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none "
-            type="range"
-            min={1}
-            max={50}
-            step={1}
-            value={brushRadius}
-            onChange={(e) => setBrushRadius(+e.target.value)}
-          />
-          {/* Canvas Width */}
-          <input
-            className="relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none "
-            type="range"
-            min={200}
-            max={1000}
-            step={25}
-            value={canvasWidth}
-            onChange={(e) => setCanvasWidth(+e.target.value)}
-          />
-          {/* Canvas Height */}
-          <input
-            className="relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none "
-            type="range"
-            min={200}
-            max={700}
-            step={25}
-            value={canvasHeight}
-            onChange={(e) => setCanvasHeight(+e.target.value)}
-          />
-        </div>
-        {/*Color Buttons */}
-        <div id="button-grid" className=" flex flex-col">
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-yllw rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.yellow);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-orng rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.orange);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-rd rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.red);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-pnk rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.pink);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-prpl rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.purple);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-blu rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.blue);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-brwn rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.brown);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-gry rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.gray);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-blck rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.black);
-            }}
-          ></div>
-          <div
-            className=" flex items-center text-xl w-12 h-12 bg-wht rounded-lg px-2 py-1 shadow-lg hover:ring-4 ring-black"
-            onClick={() => {
-              setColor(colors.white);
-            }}
-          ></div>
-        </div>
-      </div>
-      {/* Canvas div  className='main' */}
-      <div
-        id="canvas"
-        className="flex items-center justify-center h-screen bg-gray-400"
-      >
-=======
 
-      <div className='z-10 flex flex-col w-full text-black'></div>
+      <div className="z-10 flex flex-col w-full text-black"></div>
       <button
-        className='absolute z-30'
+        className="absolute z-30"
         onClick={() => {
           const saveIT = canvasRef?.current?.getSaveData();
           return saveIT;
@@ -202,11 +85,11 @@ const Draw: NextPage = (
         saveIt
       </button>
       {/* Control Center */}
-      <div className='absolute z-10 flex flex-col items-center bg-gray-800 justify-evenly w-52 h-52'>
+      <div className="absolute z-10 flex flex-col items-center bg-gray-800 justify-evenly w-52 h-52">
         {/* Brush Stroke */}
         <input
-          className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128'
-          type='range'
+          className="relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128"
+          type="range"
           min={1}
           max={50}
           step={1}
@@ -215,8 +98,8 @@ const Draw: NextPage = (
         />
         {/* Canvas Width */}
         <input
-          className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128 '
-          type='range'
+          className="relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128 "
+          type="range"
           min={200}
           max={1000}
           step={25}
@@ -225,8 +108,8 @@ const Draw: NextPage = (
         />
         {/* Canvas Height */}
         <input
-          className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128 '
-          type='range'
+          className="relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128 "
+          type="range"
           min={200}
           max={700}
           step={25}
@@ -234,10 +117,9 @@ const Draw: NextPage = (
           onChange={(e) => setCanvasHeight(+e.target.value)}
         />
       </div>
-
+      <ColorGrid setColor={setColor} />
       {/* Canvas   */}
-      <div className='flex items-center justify-center h-screen bg-gray-400'>
->>>>>>> 92812f6a807d8a745254afb70acfc5f2726b9d10:pages/draw.tsx
+      <div className="flex items-center justify-center h-screen bg-gray-400">
         <div
           className={` main    bg-gray-400 flex items-center justify-center  rounded-3xl  overflow-hidden`}
         />

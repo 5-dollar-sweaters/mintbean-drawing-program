@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { colors } from "../../lib/data/colors";
 
 export const ColorGrid = ({ setColor }) => {
