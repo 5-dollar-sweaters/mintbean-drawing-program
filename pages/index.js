@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Head from "next/head";
@@ -32,6 +33,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
+      {!user ? (
+        <a href='/api/auth/login'>Login</a>
+      ) : (
+        <a href='/api/auth/logout'>Logout</a>
+      )}
+
+
       {/* Control Center */}
       <div className="absolute flex flex-col items-center justify-center bg-gray-800 w-52 h-52">
         <input
@@ -53,6 +62,7 @@ export default function Home() {
           onChange={(e) => setCanvasWidth(e.target.value)}
         />
       </div>
+
       <div
         className={` main    w-full h-screen bg-black flex items-center justify-center`}
         onClick={handleBgBlack}
