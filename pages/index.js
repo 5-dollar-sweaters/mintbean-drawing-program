@@ -1,13 +1,16 @@
-
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Head from "next/head";
 import CanvasDraw from "react-canvas-draw";
+import { useUser } from "@auth0/nextjs-auth0";
 
 export default function Home() {
   const [bgBlack, setBgBlack] = useState(false);
   const [brushRadius, setBrushRadius] = useState(12);
   const [canvasWidth, setCanvasWidth] = useState(500);
+
+  const { user, loading } = useUser();
 
   const handleBgBlack = () => {
     setBgBlack(!bgBlack);
@@ -33,13 +36,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       {!user ? (
-        <a href='/api/auth/login'>Login</a>
+        <a href="/api/auth/login">Login</a>
       ) : (
-        <a href='/api/auth/logout'>Logout</a>
+        <a href="/api/auth/logout">Logout</a>
       )}
-
 
       {/* Control Center */}
       <div className="absolute flex flex-col items-center justify-center bg-gray-800 w-52 h-52">
