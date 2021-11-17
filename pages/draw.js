@@ -4,28 +4,25 @@ import Head from 'next/head';
 import CanvasDraw from 'react-canvas-draw';
 import { useUser } from '@auth0/nextjs-auth0';
 
-export default function Home() {
+export default function Draw() {
   const [brushRadius, setBrushRadius] = useState(12);
   const [canvasWidth, setCanvasWidth] = useState(500);
+  const [canvasHeight, setCanvasHeight] = useState(500);
 
   const { user, loading } = useUser();
-
-  const handleBgBlack = () => {
-    setBgBlack(!bgBlack);
-  };
 
   useEffect(() => {
     ReactDOM.render(
       <CanvasDraw
         hideGrid={true}
         canvasWidth={canvasWidth}
-        canvasHeight={500}
+        canvasHeight={canvasHeight}
         brushRadius={brushRadius}
         brushColor={'#ffc0cb'}
       />,
       document.querySelector('.main')
     );
-  }, [brushRadius, canvasWidth]);
+  }, [brushRadius, canvasWidth, canvasHeight]);
 
   return (
     <div className='flex flex-col min-h-screen py-2 m-auto'>
@@ -34,40 +31,48 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='z-10 flex flex-col w-full text-black'>
-        {!user ? (
-          <a href='/api/auth/login'>Login</a>
-        ) : (
-          <a href='/api/auth/logout'>Logout</a>
-        )}
-      </div>
+      <div className='z-10 flex flex-col w-full text-black'></div>
 
       {/* Control Center */}
-      <div className='absolute flex flex-col items-center justify-center bg-gray-800 w-52 h-52'>
+      <div className='absolute z-10 flex flex-col items-center bg-gray-800 justify-evenly w-52 h-52'>
+        {/* Brush Stroke */}
         <input
           className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128'
           type='range'
-          min='1'
-          max='50'
-          step='1'
+          min={1}
+          max={50}
+          step={1}
           value={brushRadius}
-          onChange={(e) => setBrushRadius(e.target.value)}
+          onChange={(e) => setBrushRadius(+e.target.value)}
         />
+        {/* Canvas Width */}
         <input
-          className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128'
+          className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128 '
           type='range'
-          min='200'
-          max='1000'
-          step='25'
+          min={200}
+          max={1000}
+          step={25}
           value={canvasWidth}
-          onChange={(e) => setCanvasWidth(e.target.value)}
+          onChange={(e) => setCanvasWidth(+e.target.value)}
+        />
+        {/* Canvas Height */}
+        <input
+          className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128 '
+          type='range'
+          min={200}
+          max={700}
+          step={25}
+          value={canvasHeight}
+          onChange={(e) => setCanvasHeight(+e.target.value)}
         />
       </div>
 
-      <div
-        className={` main    w-full h-screen bg-black flex items-center justify-center`}
-        onClick={handleBgBlack}
-      />
+      {/* Canvas div  className='main' */}
+      <div className=''>
+        <div
+          className={` main  w- h-screen  bg-gray-400 flex items-center justify-center rounded-3xl overflow-hidden`}
+        />
+      </div>
     </div>
   );
 }
