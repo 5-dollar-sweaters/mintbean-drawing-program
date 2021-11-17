@@ -1,5 +1,4 @@
 import prisma from '../lib/prisma/prisma';
-
 async function main() {
   await prisma.user.create({
     data: {

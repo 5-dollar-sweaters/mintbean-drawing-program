@@ -5,7 +5,7 @@ import CanvasDraw from 'react-canvas-draw';
 import { useUser } from '@auth0/nextjs-auth0';
 import Hero from '../components/Landing/Hero';
 
-export default function Home() {
+export default function Home(props) {
   const { user } = useUser();
 
   return (
