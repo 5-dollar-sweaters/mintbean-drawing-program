@@ -11,25 +11,24 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  email     String?  @unique
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  email     String?   @unique
   image     String?
-  role      Role     @default(USER)
+  role      Role      @default(USER)
   name      String?
   drawings  Drawing[]
 }
 
-model Drawing{
-    id        String   @id @default(uuid())
-   sketchId     String 
+model Drawing {
+  id        String   @id @default(uuid())
+  data      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- owner     User  @relation(fields: [ownerId], references: [id])
+  owner     User     @relation(fields: [ownerId], references: [id])
   ownerId   String
 }
-
 
 enum Role {
   USER

@@ -1,7 +1,8 @@
 import 'tailwindcss/tailwind.css';
 import { UserProvider } from '@auth0/nextjs-auth0';
+import type { AppProps /*, AppContext */ } from 'next/app';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <UserProvider>
       <Component {...pageProps} />
