@@ -1,16 +1,19 @@
-import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import Head from 'next/head';
+import CanvasDraw from 'react-canvas-draw';
+import useSWR from 'swr';
+import prisma from '../lib/prisma/prisma';
+import { useState, useEffect, useRef } from 'react';
 import {
   GetServerSideProps,
   NextPage,
   InferGetServerSidePropsType,
 } from 'next';
-import Head from 'next/head';
-import CanvasDraw from 'react-canvas-draw';
 import { useUser, getSession } from '@auth0/nextjs-auth0';
-import useSWR from 'swr';
-import { fetcher } from '../lib/swr/fetcher';
-import prisma from '../lib/prisma/prisma';
+// import { fetcher } from '../lib/swr/fetcher';
+import { useStore } from '../lib/zustand/store';
+
+export const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Draw: NextPage = (
   props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -19,14 +22,16 @@ const Draw: NextPage = (
   const [canvasWidth, setCanvasWidth] = useState(500);
   const [canvasHeight, setCanvasHeight] = useState(500);
   const canvasRef: any = useRef();
+  const { activeUser, setActiveUser } = useStore();
   const { user } = useUser();
-  const { data, error, mutate } = useSWR('/api/user', fetcher);
-  console.log(data);
-  console.log(user);
-
-  console.log(canvasRef.current);
-
   type DATA_TO_SAVE = { sketchId: string; userId: string };
+
+  const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
+
+  console.log(data);
+  useEffect(() => {
+    user && setActiveUser(data);
+  }, [user]);
 
   useEffect(() => {
     ReactDOM.render(
@@ -67,7 +72,6 @@ const Draw: NextPage = (
         className='absolute z-30'
         onClick={() => {
           const saveIT = canvasRef?.current?.getSaveData();
-          console.log(saveIT);
           return saveIT;
         }}
       >
@@ -122,8 +126,7 @@ export default Draw;
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
   const dbUser: any = await userReq.json();
-  // const drawingReq: any = await fetch(``);
-  console.log(dbUser);
+  console.log(userReq);
   return {
     props: {
       dbUser,
