@@ -15,12 +15,19 @@
     "next": "latest",
     "react": "^17.0.2",
     "react-canvas-draw": "^1.2.1",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "superjson": "^1.8.0",
+    "swr": "^1.0.1"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.0.4",
+    "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
     "autoprefixer": "^10.2.6",
+    "babel-plugin-superjson-next": "^0.4.2",
     "eslint-config-next": "^12.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.0",
@@ -30,9 +37,8 @@
     "prettier": "^2.4.1",
     "prisma": "^3.5.0",
     "tailwindcss": "^2.2.4",
-    "tailwindcss-debug-screens": "^2.2.0"
-  },
-  "prisma": {
-    "seed": "node prisma/seed.js"
+    "tailwindcss-debug-screens": "^2.2.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   }
 }
