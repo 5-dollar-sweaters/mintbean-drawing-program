@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import colors from '../../lib/data/colors';
+import { useStore } from '../../lib/zustand/store';
 
-const ColorGrid = ({ setColor }) => {
+const ColorGrid = () => {
   const [theme, setTheme] = useState(colors);
+  const { setBrushColor } = useStore();
 
   return (
     <div className='flex flex-row flex-wrap w-full'>
@@ -11,7 +13,7 @@ const ColorGrid = ({ setColor }) => {
           key={`colors-grid-${i}`}
           className={`flex items-center w-10 h-10 md:w-12 md:h-12 m-1 text-xl  rounded-lg shadow-lg  hover:ring-4 ring-black  ${color.twnd}`}
           onClick={() => {
-            setColor(color.color);
+            setBrushColor(color.color);
           }}
         ></button>
       ))}
