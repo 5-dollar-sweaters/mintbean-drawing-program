@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import Head from 'next/head';
-import { ColorGrid } from '../components/Draw/colorGrid';
+import ColorGrid from '../components/Draw/ColorGrid';
 import CanvasDraw from 'react-canvas-draw';
 import useSWR from 'swr';
 import prisma from '../lib/prisma/prisma';
