@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import PenSVG from './PenSVG';
-import { useUser } from '@auth0/nextjs-auth0';
-import { useStore } from '../../../lib/zustand/store.js';
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import PenSVG from "./PenSVG";
+import { useUser } from "@auth0/nextjs-auth0";
+import { useStore } from "../../../lib/zustand/store.js";
 
 const Nav = () => {
   const { user } = useUser();
@@ -11,19 +11,19 @@ const Nav = () => {
 
   const handleLogOut = async () => {
     try {
-      await router.push('/api/auth/logout');
+      await router.push("/api/auth/logout");
       await setActiveUser([]);
-      alert('logged out');
+      alert("logged out");
     } catch (error) {}
   };
 
   const handleLogIn = async () => {
     try {
-      await router.push('/api/auth/login');
+      await router.push("/api/auth/login");
       if (user) {
         console.log(user);
       }
-      console.log('logged in');
+      console.log("logged in");
     } catch (error) {
       console.log(error);
     } finally {
@@ -34,22 +34,24 @@ const Nav = () => {
   // console.log(activeUser);
   // console.log(user);
   return (
-    <div className='flex flex-row items-center w-full mt-3 justify-evenly h-9'>
-      <div className='flex flex-row items-center justify-center space-x-5'>
+    <div className="flex flex-row items-center w-full mt-3 justify-evenly h-9">
+      <div className="flex flex-row items-center justify-center space-x-5">
         <PenSVG />
         <button>About Us</button>
       </div>
 
       <div
-        onClick={() => router.push('/draw')}
-        className='flex flex-col items-center justify-center cursor-pointer'
+        onClick={() => router.push("/draw")}
+        className="flex flex-col items-center justify-center cursor-pointer"
       >
-        <div className='text-lg md:text-xl lg:text-2xl'>Drawing App</div>
-        <div className='text-xs '>by $5sweater</div>
+        <div className=" font-fancy text-lg md:text-xl lg:text-4xl">
+          Drawing App
+        </div>
+        <div className="text-xs ">by $5sweater</div>
       </div>
 
-      <div className='flex flex-row items-center justify-center space-x-5'>
-        <a href='https://github.com/5-dollar-sweaters/mintbean-drawing-program'>
+      <div className="flex flex-row items-center justify-center space-x-5">
+        <a href="https://github.com/5-dollar-sweaters/mintbean-drawing-program">
           Github
         </a>
 
