@@ -1,8 +1,4 @@
 {
-  "liveshare.allowGuestTaskControl": true,
-  "liveshare.alwaysFollowHost": true,
-  "liveshare.anonymousGuestApproval": "accept",
-  "liveshare.launcherClient": "visualStudioCode",
   "WillLuke.nextjs.addTypesOnSave": true,
   "WillLuke.nextjs.hasPrompted": true
 }

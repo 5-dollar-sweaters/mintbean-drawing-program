@@ -15,6 +15,14 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/draw.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/draw.tsx",
+    "components/Draw/ColorPicker.js",
+    "components/Draw/CanvasComponent.js",
+    "components/Draw/ColorGrid.js"
+  ],
   "exclude": ["node_modules"]
 }
