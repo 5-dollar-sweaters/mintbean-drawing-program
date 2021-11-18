@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import useSWR from 'swr';
-import prisma from '../lib/prisma/prisma';
 import { useState, useEffect, useRef } from 'react';
 import {
   GetServerSideProps,
@@ -20,16 +19,17 @@ import ColorGrid from '../components/Draw/ColorGrid';
 const Draw: NextPage = (
   props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) => {
-  const { activeUser, setActiveUser } = useStore();
+  const { activeUser, setActiveUser, canvasRef } = useStore();
   const { user } = useUser();
   type DATA_TO_SAVE = { sketchId: string; userId: string };
-
   const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
 
   console.log(data);
   useEffect(() => {
     user && setActiveUser(data);
   }, []);
+
+  console.log(canvasRef);
 
   const handleSave = async () => {
     const savedDrawing = canvasRef?.current?.getSaveData();
