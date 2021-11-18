@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { HexColorPicker } from "react-colorful";
-import { useStore } from "../../lib/zustand/store";
+import { useStore } from "../../../../lib/zustand/store";
 
 const ColorPickerComponent = () => {
   const { brushColor, setBrushColor } = useStore();

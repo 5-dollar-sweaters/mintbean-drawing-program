@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import colors from '../../lib/data/colors';
-import { useStore } from '../../lib/zustand/store';
+import { useState } from "react";
+import colors from "../../../../lib/data/colors";
+import { useStore } from "../../../../lib/zustand/store";
 
 const ColorGrid = () => {
   const [theme, setTheme] = useState(colors);
-  const { setBrushColor } = useStore();
+  const { setBrushColor, canvasRef } = useStore();
 
   return (
-    <div className='flex flex-row flex-wrap w-full'>
+    <div className="flex flex-row flex-wrap w-full">
       {colors.map((color, i) => (
         <button
           key={`colors-grid-${i}`}
