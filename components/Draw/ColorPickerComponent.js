@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { HexColorPicker } from 'react-colorful';
+import { useState } from "react";
+import { HexColorPicker } from "react-colorful";
+import { useStore } from "../../lib/zustand/store";
 
 const ColorPickerComponent = () => {
-  const [color, setColor] = useState('#aabbcc');
+  const { brushColor, setBrushColor } = useStore();
 
   return (
-    <div className='w-full'>
-      <HexColorPicker color={color} onChange={setColor} />
+    <div className="w-full">
+      <HexColorPicker color={brushColor} onChange={setBrushColor} />
     </div>
   );
 };
