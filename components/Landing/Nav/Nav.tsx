@@ -9,29 +9,29 @@ const Nav = () => {
   const { activeUser, setActiveUser } = useStore();
   const router = useRouter();
 
-  // const handleLogOut = async () => {
-  //   try {
-  //     await router.push('/api/auth/logout');
-  //     await setActiveUser([]);
-  //     console.log('logged out');
-  //     console.log(activeUser);
-  //   } catch (error) {}
-  // };
+  const handleLogOut = async () => {
+    try {
+      await router.push('/api/auth/logout');
+      await setActiveUser([]);
+      console.log('logged out');
+      console.log(activeUser);
+    } catch (error) {}
+  };
 
-  // const handleLogIn = async () => {
-  //   try {
-  //     await router.push('/api/auth/login');
-  //     await console.log(user);
-  //     if (user) {
-  //       console.log(user);
-  //     }
-  //     console.log('logged in');
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     console.log(user);
-  //   }
-  // };
+  const handleLogIn = async () => {
+    try {
+      await router.push('/api/auth/login');
+      await console.log(user);
+      if (user) {
+        console.log(user);
+      }
+      console.log('logged in');
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log(user);
+    }
+  };
 
   // console.log(activeUser);
   // console.log(user);
@@ -56,12 +56,12 @@ const Nav = () => {
         </a>
 
         {!user ? (
-          <a href='/api/auth/login'>Login</a>
+          // <a href='/api/auth/login'>Login</a>
+          <button onClick={() => handleLogIn()}>LogIns</button>
         ) : (
-          // <button onClick={() => handleLogIn()}>LogIns</button>
-          <a href='/api/auth/logout'>logout</a>
+          // <a href='/api/auth/logout'>logout</a>
 
-          // <button onClick={() => handleLogOut()}>Logout</button>
+          <button onClick={() => handleLogOut()}>Logout</button>
         )}
       </div>
     </div>
