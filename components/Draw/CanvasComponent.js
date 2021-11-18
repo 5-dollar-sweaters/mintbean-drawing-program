@@ -4,8 +4,17 @@ import CanvasDraw from 'react-canvas-draw';
 import { useStore } from '../../lib/zustand/store';
 
 const CanvasComponent = () => {
-  const canvasRef = useRef();
-  const { lazyRadius1, brushRadius1, brushColor } = useStore();
+  const canvasReference = useRef();
+  const { lazyRadius1, brushRadius1, brushColor, setCanvasRef, canvasRef } =
+    useStore();
+
+  const savedData = canvasRef.current?.getSaveData();
+
+  useEffect(() => {
+    setCanvasRef(canvasReference);
+  }, []);
+  // console.log(canvasRef);
+  // console.log(savedData);
 
   return (
     <div>
