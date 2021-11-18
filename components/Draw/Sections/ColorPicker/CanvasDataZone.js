@@ -1,8 +1,10 @@
+import { useUser } from '@auth0/nextjs-auth0';
 import React from 'react';
 import { useStore } from '../../../../lib/zustand/store';
 import { saveData } from '../../../../utils/prismaHelpers';
 
 const CanvasDataZone = () => {
+  const { user } = useUser();
   const { canvasRef, activeUser } = useStore();
 
   const handleSaveDrawing = async () => {
@@ -25,7 +27,7 @@ const CanvasDataZone = () => {
     <div>
       <button onClick={() => canvasRef.current.undo()}>UNDO</button>
       <button onClick={() => canvasRef.current.clear()}>CLEAR</button>
-      {activeUser && <button onClick={() => handleSaveDrawing()}>SAVE </button>}
+      {user && <button onClick={() => handleSaveDrawing()}>SAVE </button>}
     </div>
   );
 };
