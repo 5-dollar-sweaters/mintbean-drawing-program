@@ -11,11 +11,11 @@ export default async function saveDrawing(
 
   const drawingData = JSON.parse(req.body);
 
-  const savedDrawing: any = await prisma.drawing.create({
-    data: {
-      id: drawingData.sketchId,
-      owner: { connect: { id: drawingData.userId } },
-    },
+  const savedDrawing: any = await prisma.drawing.findMany({
+    // data: {
+    //   id: drawingData.sketchId,
+    //   owner: { connect: { id: drawingData.userId } },
+    // },
   });
   res.json(savedDrawing);
 }
