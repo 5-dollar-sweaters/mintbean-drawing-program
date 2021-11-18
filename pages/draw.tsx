@@ -50,6 +50,7 @@ const Draw: NextPage = (
 
       <div>
         <ColorMain />
+        <h1> test</h1>
       </div>
 
       <div>
