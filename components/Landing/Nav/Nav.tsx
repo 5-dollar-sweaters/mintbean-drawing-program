@@ -6,7 +6,7 @@ import { useStore } from '../../../lib/zustand/store.js';
 
 const Nav = () => {
   const { user } = useUser();
-  // const { activeUser, setActiveUser } = useStore();
+  const { activeUser, setActiveUser } = useStore();
   const router = useRouter();
 
   // const handleLogOut = async () => {
