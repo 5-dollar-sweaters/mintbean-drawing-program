@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-import CanvasDraw from "react-canvas-draw";
-import { useStore } from "../../../../lib/zustand/store";
+import CanvasDraw from 'react-canvas-draw';
+import { useStore } from '../../../../lib/zustand/store';
 
 const CanvasComponent = () => {
   const canvasReference = useRef();
@@ -13,7 +13,7 @@ const CanvasComponent = () => {
   useEffect(() => {
     setCanvasRef(canvasReference);
   }, []);
-  // console.log(canvasRef);
+  console.log(canvasRef);
   // console.log(savedData);
 
   return (

@@ -25,7 +25,7 @@ const Draw: NextPage = (
   console.log(data);
   useEffect(() => {
     user && setActiveUser(data);
-  }, []);
+  }, [data]);
 
   console.log(canvasRef);
 
