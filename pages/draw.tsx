@@ -78,7 +78,7 @@ const Draw: NextPage = (
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='flex flex-row md:w-3/12 md:flex-col'>
+      <div className='flex flex-row items-center m-auto md:w-3/12 md:flex-col'>
         <ColorPickerComponent />
         <ColorGrid setColor={setColor} />
       </div>
