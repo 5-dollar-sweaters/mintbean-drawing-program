@@ -13,6 +13,7 @@ import { useStore } from '../lib/zustand/store';
 import ColorMain from '../components/Draw/Sections/ColorPicker/ColorMain';
 import ControlCenter from '../components/Draw/Sections/ControlCenter/ControlMain';
 import CanvasMain from '../components/Draw/Sections/Canvas/CanvasMain';
+import { prisma } from '@prisma/client';
 
 const Draw: NextPage = (
   props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -20,14 +21,22 @@ const Draw: NextPage = (
   const { activeUser, setActiveUser, canvasRef } = useStore();
   const { user } = useUser();
   type DATA_TO_SAVE = { sketchId: string; userId: string };
-  const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
 
-  console.log(data);
+  const GetData = (endpoint: string) => {
+    try {
+      const { data, error, mutate } = useSWR(user && `${endpoint}`, fetcher);
+      return { data };
+    } catch (error) {
+      console.log('error:', error);
+      throw error;
+    }
+  };
+
+  const userData = GetData('/api/user');
+
   useEffect(() => {
-    user && setActiveUser(data);
-  }, [data]);
-
-  console.log(canvasRef);
+    user && setActiveUser(userData?.data);
+  }, [userData.data]);
 
   return (
     <div
@@ -59,7 +68,14 @@ export default Draw;
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
   const dbUser: any = await userReq.json();
-  // console.log(userReq);
+  // console.log(dbUser);
+
+  // const userDrawings = await prisma.drawing.findMany({
+  //   where: {
+  //     ownderId:
+  //   }
+  // })
+
   return {
     props: {
       dbUser,

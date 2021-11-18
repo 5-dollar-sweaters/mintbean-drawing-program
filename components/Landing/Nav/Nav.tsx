@@ -13,15 +13,13 @@ const Nav = () => {
     try {
       await router.push('/api/auth/logout');
       await setActiveUser([]);
-      console.log('logged out');
-      console.log(activeUser);
+      alert('logged out');
     } catch (error) {}
   };
 
   const handleLogIn = async () => {
     try {
       await router.push('/api/auth/login');
-      await console.log(user);
       if (user) {
         console.log(user);
       }

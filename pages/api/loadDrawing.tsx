@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../lib/prisma/prisma';
 
-export default async function saveDrawing(
+export default async function loadDrawing(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'GET') {
     return res.status(405).json({ message: 'Method not allowed ' });
   }
 

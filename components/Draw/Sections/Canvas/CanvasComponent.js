@@ -13,7 +13,7 @@ const CanvasComponent = () => {
   useEffect(() => {
     setCanvasRef(canvasReference);
   }, []);
-  console.log(canvasRef);
+  // console.log(canvasRef);
   // console.log(savedData);
 
   return (
