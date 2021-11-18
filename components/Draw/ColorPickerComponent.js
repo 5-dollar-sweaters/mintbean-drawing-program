@@ -1,18 +1,12 @@
-import { ColorPicker, useColor } from 'react-color-palette';
-import 'react-color-palette/lib/css/styles.css';
+import { useState } from 'react';
+import { HexColorPicker } from 'react-colorful';
 
 const ColorPickerComponent = () => {
-  const [color, setColor] = useColor('hex', '#121212');
+  const [color, setColor] = useState('#aabbcc');
 
   return (
     <div className='w-full'>
-      <ColorPicker
-        height={228}
-        color={color}
-        onChange={setColor}
-        hideHSV
-        dark
-      />
+      <HexColorPicker color={color} onChange={setColor} />
     </div>
   );
 };

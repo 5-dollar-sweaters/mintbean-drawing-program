@@ -78,19 +78,19 @@ const Draw: NextPage = (
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='flex flex-col w-3/12'>
+      <div className='flex flex-row md:w-3/12 md:flex-col'>
         <ColorPickerComponent />
         <ColorGrid setColor={setColor} />
       </div>
 
       {/* Canvas   */}
-      <div className='flex items-center justify-center w-5/12 h-screen bg-gray-400'>
+      <div className='flex items-center justify-center h-full bg-gray-400 md:w-5/12'>
         <div
           className={` main    bg-gray-400 flex items-center justify-center  rounded-3xl  overflow-hidden`}
         />
       </div>
 
-      <div className='w-2/12'>
+      <div className='md:w-2/12'>
         <ControlCenter
           brushRadius={brushRadius}
           setBrushRadius={setBrushRadius}
