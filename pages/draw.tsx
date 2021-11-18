@@ -17,17 +17,17 @@ import CanvasMain from '../components/Draw/Sections/Canvas/CanvasMain';
 const Draw: NextPage = () =>
   // props: InferGetServerSidePropsType<typeof getServerSideProps>
   {
-    // const { activeUser, setActiveUser, canvasRef } = useStore();
-    // const { user } = useUser();
-    // type DATA_TO_SAVE = { sketchId: string; userId: string };
-    // const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
+    const { activeUser, setActiveUser, canvasRef } = useStore();
+    const { user } = useUser();
+    type DATA_TO_SAVE = { sketchId: string; userId: string };
+    const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
 
-    // console.log(data);
-    // useEffect(() => {
-    //   user && setActiveUser(data);
-    // }, []);
+    console.log(data);
+    useEffect(() => {
+      user && setActiveUser(data);
+    }, []);
 
-    // console.log(canvasRef);
+    console.log(canvasRef);
 
     return (
       <div
@@ -56,13 +56,13 @@ const Draw: NextPage = () =>
 
 export default Draw;
 
-// export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-//   const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
-//   const dbUser: any = await userReq.json();
-//   // console.log(userReq);
-//   return {
-//     props: {
-//       dbUser,
-//     },
-//   };
-// };
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
+  const dbUser: any = await userReq.json();
+  // console.log(userReq);
+  return {
+    props: {
+      dbUser,
+    },
+  };
+};
