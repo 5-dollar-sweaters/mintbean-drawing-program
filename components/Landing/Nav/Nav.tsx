@@ -56,9 +56,12 @@ const Nav = () => {
         </a>
 
         {!user ? (
-          <button onClick={() => handleLogIn()}>LogIn</button>
+          <a href='/api/auth/login'>Login</a>
         ) : (
-          <button onClick={() => handleLogOut()}>Logout</button>
+          // <button onClick={() => handleLogIn()}>LogIn</button>
+          <a href='/api/auth/logout'>logout</a>
+
+          // <button onClick={() => handleLogOut()}>Logout</button>
         )}
       </div>
     </div>
