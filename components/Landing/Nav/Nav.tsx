@@ -58,7 +58,7 @@ const Nav = () => {
         {!user ? (
           <a href='/api/auth/login'>Login</a>
         ) : (
-          // <button onClick={() => handleLogIn()}>LogIn</button>
+          // <button onClick={() => handleLogIn()}>LogIns</button>
           <a href='/api/auth/logout'>logout</a>
 
           // <button onClick={() => handleLogOut()}>Logout</button>
