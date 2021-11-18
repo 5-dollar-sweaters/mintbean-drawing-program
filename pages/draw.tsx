@@ -13,53 +13,69 @@ import { useStore } from '../lib/zustand/store';
 import ColorMain from '../components/Draw/Sections/ColorPicker/ColorMain';
 import ControlCenter from '../components/Draw/Sections/ControlCenter/ControlMain';
 import CanvasMain from '../components/Draw/Sections/Canvas/CanvasMain';
+import { prisma } from '@prisma/client';
 
-const Draw: NextPage = () =>
-  // props: InferGetServerSidePropsType<typeof getServerSideProps>
-  {
-    const { activeUser, setActiveUser, canvasRef } = useStore();
-    const { user } = useUser();
-    type DATA_TO_SAVE = { sketchId: string; userId: string };
-    const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
+const Draw: NextPage = (
+  props: InferGetServerSidePropsType<typeof getServerSideProps>
+) => {
+  const { activeUser, setActiveUser, canvasRef } = useStore();
+  const { user } = useUser();
+  type DATA_TO_SAVE = { sketchId: string; userId: string };
 
-    console.log(data);
-    useEffect(() => {
-      user && setActiveUser(data);
-    }, []);
-
-    console.log(canvasRef);
-
-    return (
-      <div
-        id='container'
-        className='flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row'
-      >
-        <Head>
-          <title>Gahw Drahw</title>
-          <link rel='icon' href='/favicon.ico' />
-        </Head>
-
-        <div>
-          <ColorMain />
-        </div>
-
-        <div>
-          <CanvasMain />
-        </div>
-
-        <div>
-          <ControlCenter />
-        </div>
-      </div>
-    );
+  const GetData = (endpoint: string) => {
+    try {
+      const { data, error, mutate } = useSWR(user && `${endpoint}`, fetcher);
+      return { data };
+    } catch (error) {
+      console.log('error:', error);
+      throw error;
+    }
   };
+
+  const userData = GetData('/api/user');
+
+  useEffect(() => {
+    user && setActiveUser(userData?.data);
+  }, [userData.data]);
+
+  return (
+    <div
+      id='container'
+      className='flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row'
+    >
+      <Head>
+        <title>Gahw Drahw</title>
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+
+      <div>
+        <ColorMain />
+      </div>
+
+      <div>
+        <CanvasMain />
+      </div>
+
+      <div>
+        <ControlCenter />
+      </div>
+    </div>
+  );
+};
 
 export default Draw;
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
   const dbUser: any = await userReq.json();
-  // console.log(userReq);
+  // console.log(dbUser);
+
+  // const userDrawings = await prisma.drawing.findMany({
+  //   where: {
+  //     ownderId:
+  //   }
+  // })
+
   return {
     props: {
       dbUser,
