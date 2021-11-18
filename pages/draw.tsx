@@ -59,7 +59,7 @@ export default Draw;
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
   const dbUser: any = await userReq.json();
-  console.log(userReq);
+  // console.log(userReq);
   return {
     props: {
       dbUser,
