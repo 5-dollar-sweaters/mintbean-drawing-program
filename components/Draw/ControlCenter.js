@@ -6,7 +6,7 @@ const ControlCenter = ({
   setLazyRadius,
 }) => {
   return (
-    <div className='absolute z-10 flex flex-col items-center h-full bg-gray-800 justify-evenly'>
+    <div className='z-10 flex flex-col items-center h-24 bg-gray-800 md:h-40 justify-evenly'>
       {/* Brush Stroke */}
       <input
         className='relative h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128'

@@ -71,7 +71,7 @@ const Draw: NextPage = (
   return (
     <div
       id='container'
-      className='flex flex-col justify-between w-full min-h-screen py-2 m-auto md:flex-row '
+      className='flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row'
     >
       <Head>
         <title>Create Next App</title>
