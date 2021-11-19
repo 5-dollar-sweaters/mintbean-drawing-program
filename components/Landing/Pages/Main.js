@@ -12,8 +12,10 @@ const Main = () => {
 
   return (
     <div
+
       id="container"
       className="flex flex-col lg:flex-row  items-center h-screen justify-evenly bg-grey-100"
+
     >
       <div
         id="content"
@@ -43,7 +45,9 @@ const Main = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-96 h-72">
+      {/* Video */}
+      <div className='relative w-96 h-72'>
+
         <Image
           src="/capture.png"
           alt="image"
