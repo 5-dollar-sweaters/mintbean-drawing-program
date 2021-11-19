@@ -26,62 +26,7 @@ const Instructions = () => {
           >
             <div
               id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 p-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
-            <div
-              id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 py-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
-            <div
-              id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 py-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
-            <div
-              id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 py-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
-            <div
-              id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 py-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
-            <div
-              id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 py-4 border-black rounded-2xl "
+              className=" flex bg-purple-400 w-64 h-72 border-4 p-4 border-black rounded-2xl "
             >
               <div
                 id="card-text"
