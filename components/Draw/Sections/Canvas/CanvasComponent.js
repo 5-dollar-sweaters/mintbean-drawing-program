@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-
 import CanvasDraw from 'react-canvas-draw';
-import { useStore } from '../../../../lib/zustand/store';
+
+import { useStore } from 'lib/zustand/store';
 
 const CanvasComponent = () => {
   const canvasReference = useRef();

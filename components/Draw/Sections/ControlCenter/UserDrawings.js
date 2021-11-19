@@ -1,6 +1,6 @@
 import useSWR from 'swr';
-import { fetcher } from '../../../../lib/swr/fetcher';
-import { useStore } from '../../../../lib/zustand/store';
+import { fetcher } from 'lib/swr/fetcher';
+import { useStore } from 'lib/zustand/store';
 
 const UserDrawings = () => {
   const { activeUser, canvasRef } = useStore();
