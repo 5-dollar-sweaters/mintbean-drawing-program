@@ -1,3 +1,5 @@
+import { instructions } from "lib/instructionData/instructionData";
+
 const Instructions = () => {
   return (
     <div id="container" className=" bg-purple-400 h-screen">
@@ -22,30 +24,20 @@ const Instructions = () => {
         <div id="image-row">
           <div
             id="cards"
-            className=" flex flex-row  bg-gray-200 w-screen px-8 py-4 border-"
+            className=" flex flex-row  w-screen px-8 py-4 border-"
           >
-            <div
-              id="card"
-              className=" flex bg-purple-400 w-64 h-72 border-4 p-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
-            <div
-              id="card"
-              className="  bg-purple-400 w-64 h-72 border-4 py-4 border-black rounded-2xl "
-            >
-              <div
-                id="card-text"
-                className=" flex text-center text-white text-2xl"
-              >
-                Start by clicking the arrows on the sides of the canvas
-              </div>
-            </div>
+            {instructions.map((instruction, i) => {
+              return (
+                <div
+                  key={i}
+                  id="card"
+                  className=" flex bg-card-background w-64 h-64 border-4 p-4 border-black rounded-tr-2xl rounded-r-2xl "
+                >
+                  {instruction.step}
+                  {instruction.inst}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
