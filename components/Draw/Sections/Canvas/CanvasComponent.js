@@ -21,7 +21,7 @@ const CanvasComponent = () => {
       ref={canvasRef}
       hideGrid={true}
       canvasWidth={700}
-      canvasHeight={450}
+      canvasHeight={800}
       brushRadius={brushRadius1}
       brushColor={brushColor}
       lazyRadius={lazyRadius1}

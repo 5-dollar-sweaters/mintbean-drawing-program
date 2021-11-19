@@ -5,7 +5,7 @@ const ControlCenter = () => {
     useStore();
 
   return (
-    <div className='flex flex-col items-center w-full h-24 p-6 bg-gray-800 rounded-md md:h-40 justify-evenly'>
+    <div className='flex flex-col items-center w-full h-full p-6 bg-gray-800 rounded-md justify-evenly'>
       {/* Brush Stroke */}
       <label
         htmlFor='brushStroke'

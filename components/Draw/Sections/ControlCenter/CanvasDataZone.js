@@ -27,12 +27,21 @@ const CanvasDataZone = () => {
     }
   };
 
+  const buttonStyle =
+    'w-11/12 py-1 text-gray-100 transition-all duration-300   bg-gray-400 rounded-md hover:bg-gray-200 hover:text-gray-600';
+
   return (
-    <div className='flex flex-col w-full p-2 space-y-2 bg-white rounded-md'>
-      <button onClick={() => canvasRef.current.undo()}>UNDO</button>
-      <button onClick={() => canvasRef.current.clear()}>CLEAR</button>
+    <div className='flex flex-col items-center justify-center w-full h-full p-2 space-y-4 bg-white rounded-md lg:h-auto'>
+      <button className={buttonStyle} onClick={() => canvasRef.current.undo()}>
+        UNDO
+      </button>
+      <button className={buttonStyle} onClick={() => canvasRef.current.clear()}>
+        CLEAR
+      </button>
       {user && !showSaveBox && (
-        <button onClick={() => setShowSaveBox(true)}>SAVE </button>
+        <button className={buttonStyle} onClick={() => setShowSaveBox(true)}>
+          SAVE{' '}
+        </button>
       )}
       {showSaveBox && (
         <div className='absolute flex items-center justify-center h-24 bg-gray-200 w-72 '>

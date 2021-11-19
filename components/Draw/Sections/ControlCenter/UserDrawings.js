@@ -17,7 +17,7 @@ const UserDrawings = () => {
   };
 
   return (
-    <div className='flex flex-col w-full p-2 space-y-2 bg-white rounded-md'>
+    <div className='grid w-full h-full grid-cols-2 p-2 space-y-2 bg-white rounded-md lg:h-auto lg:flex lg:flex-col'>
       {data ? (
         data.map((drawing, i) => (
           <button
