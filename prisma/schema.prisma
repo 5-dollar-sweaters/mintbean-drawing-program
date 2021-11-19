@@ -24,6 +24,7 @@ model User {
 model Drawing {
   id        String   @id @default(uuid())
   data      String
+  title     String   @default("title")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   owner     User     @relation(fields: [ownerId], references: [id])

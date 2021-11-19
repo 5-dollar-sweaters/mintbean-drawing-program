@@ -13,8 +13,9 @@ export default async function saveDrawing(
   // console.log(drawingData);
   const savedDrawing: any = await prisma.drawing.create({
     data: {
-      data: drawingData.data,
-      owner: { connect: { id: drawingData.ownerId } },
+      data: drawingData?.data,
+      title: drawingData?.title,
+      owner: { connect: { id: drawingData?.ownerId } },
     },
   });
   res.json(savedDrawing);
