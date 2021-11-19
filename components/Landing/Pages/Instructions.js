@@ -2,17 +2,17 @@ import { instructions } from "lib/instructionData/instructionData";
 
 const Instructions = () => {
   return (
-    <div id="container" className=" bg-purple-400 h-screen">
+    <div id="container" className=" bg-gray-900 h-screen mt-8 lg:mt-0">
       <div id="top">
         <div
           id="title"
-          className=" flex justify-center text-6xl text-white font-fancy pt-16"
+          className=" flex justify-center text-4xl lg:text-6xl text-white font-fancy pt-16"
         >
           <h1>A helping hand</h1>
         </div>
         <div
           id="description"
-          className=" flex justify-center text-center px-16 py-4 text-2xl text-white"
+          className=" flex justify-center text-center px-16 py-4 ls:text-2xl text-white"
         >
           <h2>
             Struggling to get started? <br></br>Scroll down to see a list of
@@ -21,19 +21,18 @@ const Instructions = () => {
         </div>
       </div>
       <div id="bottom">
-        <div id="image-row">
+        <div id="image-row" className="contents">
           <div
             id="cards"
-            className=" flex flex-row  w-screen px-8 py-4 border-"
+            className=" w-max border inline-grid grid-cols-7 gap-x-12"
           >
             {instructions.map((instruction, i) => {
               return (
                 <div
                   key={i}
                   id="card"
-                  className=" flex bg-card-background w-64 h-64 border-4 p-4 border-black rounded-tr-2xl rounded-r-2xl "
+                  className=" text-white font-fancy bg-purple-400 w-32 lg:w-60 h-64 border-4 p-4 border-black rounded-md "
                 >
-                  {instruction.step}
                   {instruction.inst}
                 </div>
               );

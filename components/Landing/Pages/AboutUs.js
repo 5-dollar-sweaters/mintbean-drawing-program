@@ -6,9 +6,9 @@ const AboutUs = () => {
       id="container"
       className=" flex flex-col flex-wrap justify-center bg-gray-300 h-screen"
     >
-      <div id="images" className=" flex">
-        <Image src="/ethan.jfif" alt="ethan" width={300} height={300} />
-        <Image src="/ian.png" alt="ian" width={300} height={300} />
+      <div id="images" className=" flex ">
+        <Image src="/ethan.jfif" alt="ethan" width={200} height={200} />
+        <Image src="/ian.png" alt="ian" width={200} height={200} />
       </div>
       <div id="words" className=" flex flex-col items-end">
         <div id="title" className=" text-7xl text-black font-fancy">
