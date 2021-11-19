@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <div
       id='container'
-      className='flex flex-row items-center h-screen justify-evenly bg-grey-100'
+      className='flex flex-col items-center h-screen lg:flex-row justify-evenly bg-grey-100'
     >
       <div id='content' className='flex flex-col justify-center flex-nowrap'>
         <div id='main' className='flex flex-col content-center'>
@@ -37,6 +37,8 @@ const Main = () => {
           </button>
         </div>
       </div>
+
+      {/* Video */}
       <div className='relative w-96 h-72'>
         <Image
           src='/capture.png'
