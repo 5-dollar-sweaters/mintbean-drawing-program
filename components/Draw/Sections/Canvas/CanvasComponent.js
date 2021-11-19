@@ -17,20 +17,15 @@ const CanvasComponent = () => {
   // console.log(savedData);
 
   return (
-    <div>
-      <div
-        className={` main    bg-gray-400 flex items-center justify-center  rounded-3xl  overflow-hidden`}
-      />
-      <CanvasDraw
-        ref={canvasRef}
-        hideGrid={true}
-        canvasWidth={500}
-        canvasHeight={500}
-        brushRadius={brushRadius1}
-        brushColor={brushColor}
-        lazyRadius={lazyRadius1}
-      />
-    </div>
+    <CanvasDraw
+      ref={canvasRef}
+      hideGrid={true}
+      canvasWidth={700}
+      canvasHeight={800}
+      brushRadius={brushRadius1}
+      brushColor={brushColor}
+      lazyRadius={lazyRadius1}
+    />
   );
 };
 
