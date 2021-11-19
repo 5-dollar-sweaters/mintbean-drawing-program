@@ -3,26 +3,25 @@ import { useRouter } from 'next/router';
 import PenSVG from './PenSVG';
 import { useUser } from '@auth0/nextjs-auth0';
 import { useStore } from 'lib/zustand/store';
+import User from 'components/Auth/User';
+import { fetcher } from 'lib/swr/fetcher';
+import useSWR from 'swr';
 
 const Nav = () => {
   const { user } = useUser();
   const { activeUser, setActiveUser } = useStore();
   const router = useRouter();
+  const { data, error, mutate } = useSWR(user && `/api/user`, fetcher);
 
-  const handleLogOut = async () => {
-    try {
-      await router.push('/api/auth/logout');
-      await setActiveUser([]);
-      alert('logged out');
-    } catch (error) {}
-  };
+  useEffect(() => {
+    user && setActiveUser(data);
+  }, [data]);
 
   const handleLogIn = async () => {
     try {
       await router.push('/api/auth/login');
-      if (user) {
-        console.log(user);
-      }
+      mutate();
+
       console.log('logged in');
     } catch (error) {
       console.log(error);
@@ -31,10 +30,8 @@ const Nav = () => {
     }
   };
 
-  // console.log(activeUser);
-  // console.log(user);
   return (
-    <div className='flex flex-row items-center w-full mt-3 justify-evenly h-9'>
+    <div className='flex flex-row items-center w-full my-3 justify-evenly h-9'>
       <div className='flex flex-row items-center justify-center space-x-5'>
         <PenSVG />
         <button>About Us</button>
@@ -56,9 +53,15 @@ const Nav = () => {
         </a>
 
         {!user ? (
-          <button onClick={() => handleLogIn()}>LogIns</button>
+          <button onClick={() => handleLogIn()}>LogIn</button>
+        ) : !data ? (
+          <div>...loading</div>
         ) : (
-          <button onClick={() => handleLogOut()}>Logout</button>
+          <>
+            <div>
+              <User userFromNav={activeUser} />
+            </div>
+          </>
         )}
       </div>
     </div>

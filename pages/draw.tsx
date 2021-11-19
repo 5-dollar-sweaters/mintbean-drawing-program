@@ -22,24 +22,6 @@ const Draw: NextPage = (
   const { user } = useUser();
   type DATA_TO_SAVE = { sketchId: string; userId: string };
 
-  console.log(user);
-
-  const GetData = (endpoint: string) => {
-    try {
-      const { data, error, mutate } = useSWR(user && `${endpoint}`, fetcher);
-      return { data };
-    } catch (error) {
-      console.log('error:', error);
-      throw error;
-    }
-  };
-
-  const userData = GetData('/api/user');
-
-  useEffect(() => {
-    user && setActiveUser(userData?.data);
-  }, [userData.data]);
-
   return (
     <div id='container' className='w-full p-6 bg-gray-400 '>
       <Head>
