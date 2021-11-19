@@ -21,7 +21,7 @@ const AboutUs = () => {
             />
           </div>
           <div id="info" className="lg:w-100 lg:p-16 lg:pl-24">
-            <div id="name" className=" py-4 flex-col lg:flex">
+            <div id="name" className="py-4 lg:flex lg:flex-row">
               <p>Ian Cameron Lyles</p>
               <p className="lg:pl-36">SOFTWARE DEVELOPER</p>
             </div>
