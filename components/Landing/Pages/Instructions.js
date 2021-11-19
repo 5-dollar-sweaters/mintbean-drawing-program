@@ -12,7 +12,7 @@ const Instructions = () => {
         </div>
         <div
           id="description"
-          className=" flex justify-center text-center px-16 py-4 ls:text-2xl text-white"
+          className=" flex justify-center text-center px-16 py-4 lg:text-2xl text-white"
         >
           <h2>
             Struggling to get started? <br></br>Scroll down to see a list of
