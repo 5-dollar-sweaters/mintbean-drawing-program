@@ -13,7 +13,6 @@ const CanvasDataZone = () => {
   console.log(title);
   const handleSaveDrawing = async () => {
     const drawingString = await canvasRef.current.getSaveData();
-    // console.log(drawingString);
     const data = {
       data: drawingString,
       ownerId: activeUser?.id,
@@ -29,7 +28,7 @@ const CanvasDataZone = () => {
   };
 
   return (
-    <div>
+    <div className='flex flex-col w-full p-2 space-y-2 bg-white rounded-md'>
       <button onClick={() => canvasRef.current.undo()}>UNDO</button>
       <button onClick={() => canvasRef.current.clear()}>CLEAR</button>
       {user && !showSaveBox && (
@@ -37,12 +36,14 @@ const CanvasDataZone = () => {
       )}
       {showSaveBox && (
         <div className='absolute flex items-center justify-center h-24 bg-gray-200 w-72 '>
-          <textarea
-            placeholder='Title your drawing!'
-            className='px-3 py-2 rounded-md'
-            onChange={() => setTitle(title)}
-            value={title}
-          />
+          <form>
+            <textarea
+              placeholder='Title your drawing!'
+              className='px-3 py-2 rounded-md'
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+          </form>
           <button onClick={() => handleSaveDrawing()}>Save</button>
         </div>
       )}

@@ -1,13 +1,15 @@
-import ColorPickerComponent from "./ColorPickerComponent";
-import ColorGrid from "./ColorGrid";
-import CanvasDataZone from "./CanvasDataZone";
+import ColorPickerComponent from './ColorPickerComponent';
+import ColorGrid from './ColorGrid';
 
 const ColorMain = () => {
   return (
-    <div className="flex flex-row items-center m-auto md:w-3/12 md:flex-col">
-      <ColorPickerComponent />
-      <ColorGrid />
-      <CanvasDataZone />
+    <div className='flex flex-row items-center justify-center w-full m-auto lg:flex-col'>
+      <div className='flex items-center justify-center w-1/2 lg:w-full'>
+        <ColorPickerComponent />
+      </div>
+      <div className='w-1/2 lg:w-full'>
+        <ColorGrid />
+      </div>
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import CanvasComponent from "../Canvas/CanvasComponent";
+import CanvasComponent from '../Canvas/CanvasComponent';
 
 const CanvasMain = () => {
   return (
-    <div className="flex items-center justify-center h-full bg-gray-400 md:w-5/12">
+    <div className='flex items-center justify-center w-full h-full '>
       <CanvasComponent />
     </div>
   );

@@ -41,25 +41,22 @@ const Draw: NextPage = (
   }, [userData.data]);
 
   return (
-    <div
-      id='container'
-      className='flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row'
-    >
+    <div id='container' className='p-6 bg-gray-400 '>
       <Head>
         <title>Gahw Drahw</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div>
-        <ColorMain />
-      </div>
-
-      <div>
-        <CanvasMain />
-      </div>
-
-      <div>
-        <ControlCenter />
+      <div className='flex flex-col items-center justify-between w-full h-full space-y-6 lg:h-screen lg:space-y-none lg:space-x-6 lg:flex-row'>
+        <div className=''>
+          <ColorMain />
+        </div>
+        <div>
+          <CanvasMain />
+        </div>
+        <div>
+          <ControlCenter />
+        </div>
       </div>
     </div>
   );
