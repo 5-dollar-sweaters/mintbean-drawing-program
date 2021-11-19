@@ -36,8 +36,14 @@ const Main = () => {
           Try It
         </button>
       </div>
-      <div className=''>
-        <Image src='/capture.png' alt='image' width={500} height={350} />
+      <div className='relative w-96 h-72'>
+        <Image
+          src='/capture.png'
+          alt='image'
+          layout='fill'
+          quality={30}
+          objectFit='cover'
+        />
       </div>
     </div>
   );

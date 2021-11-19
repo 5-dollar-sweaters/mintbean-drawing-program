@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import prisma from '../../lib/prisma/prisma';
+import prisma from 'lib/prisma/prisma';
 import { withApiAuthRequired, getSession } from '@auth0/nextjs-auth0';
 
 export default async function user(req: NextApiRequest, res: NextApiResponse) {
