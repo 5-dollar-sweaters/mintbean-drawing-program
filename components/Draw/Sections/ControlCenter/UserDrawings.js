@@ -5,7 +5,7 @@ import { useStore } from '../../../../lib/zustand/store';
 const UserDrawings = () => {
   const { activeUser, canvasRef } = useStore();
   const { data, error, mutate } = useSWR(
-    `/api/drawings?ownerId=${activeUser.id}`,
+    `/api/drawings?ownerId=${activeUser?.id}`,
     fetcher
   );
 

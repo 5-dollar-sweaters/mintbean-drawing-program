@@ -12,9 +12,12 @@ export default async function user(req: NextApiRequest, res: NextApiResponse) {
       where: {
         email: session?.user?.email,
       },
-      update: {},
+      update: {
+        image: session?.user?.picture,
+      },
       create: {
         email: session?.user?.email,
+        image: session?.user?.picture,
       },
     });
     console.log(activeUser);
