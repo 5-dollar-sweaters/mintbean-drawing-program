@@ -1,16 +1,18 @@
 import { useUser } from '@auth0/nextjs-auth0';
 import { useState } from 'react';
 import React from 'react';
-import { useStore } from 'lib/zustand/store';
+import { useSaveStore, useStore } from 'lib/zustand/store';
 import { saveData } from 'utils/prismaHelpers';
+import SaveDialog from 'components/Draw/Sections/ControlCenter/SaveDialog';
 
 const CanvasDataZone = () => {
   const { user } = useUser();
   const { canvasRef, activeUser } = useStore();
-  const [showSaveBox, setShowSaveBox] = useState(false);
+  const { showSaveBox, setShowSaveBox } = useSaveStore();
   const [title, setTitle] = useState('');
 
   console.log(title);
+
   const handleSaveDrawing = async () => {
     const drawingString = await canvasRef.current.getSaveData();
     const data = {
@@ -43,18 +45,20 @@ const CanvasDataZone = () => {
           SAVE{' '}
         </button>
       )}
+
       {showSaveBox && (
-        <div className='absolute flex items-center justify-center h-24 bg-gray-200 w-72 '>
-          <form>
-            <textarea
-              placeholder='Title your drawing!'
-              className='px-3 py-2 rounded-md'
-              onChange={(e) => setTitle(e.target.value)}
-              value={title}
-            />
-          </form>
-          <button onClick={() => handleSaveDrawing()}>Save</button>
-        </div>
+        // <div className='absolute flex items-center justify-center h-24 bg-gray-200 w-72 '>
+        //   <form>
+        //     <textarea
+        //       placeholder='Title your drawing!'
+        //       className='px-3 py-2 rounded-md'
+        //       onChange={(e) => setTitle(e.target.value)}
+        //       value={title}
+        //     />
+        //   </form>
+        //   <button onClick={() => handleSaveDrawing()}>Save</button>
+        // </div>
+        <SaveDialog />
       )}
     </div>
   );

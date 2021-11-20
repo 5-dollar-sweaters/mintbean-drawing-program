@@ -31,8 +31,10 @@ const Nav = () => {
   };
 
   return (
+
     <div className="flex flex-row items-center w-full my-3 justify-evenly h-9">
       <div className="flex flex-row items-center justify-center space-x-5">
+
         <PenSVG />
         <button>
           <a href="#About">About Us</a>

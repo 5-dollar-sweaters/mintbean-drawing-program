@@ -1,7 +1,8 @@
-import { instructions } from "lib/instructionData/instructionData";
+import { instructions } from 'lib/instructionData/instructionData';
 
 const Instructions = () => {
   return (
+
     <>
       <a name="Instructions"></a>
       <div id="container" className=" bg-gray-900 h-screen mt-8 lg:mt-0">

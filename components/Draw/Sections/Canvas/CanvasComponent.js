@@ -25,6 +25,7 @@ const CanvasComponent = () => {
       brushRadius={brushRadius1}
       brushColor={brushColor}
       lazyRadius={lazyRadius1}
+      enablePanAndZoom={true}
     />
   );
 };
