@@ -21,10 +21,12 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/draw.tsx",
-    "components/Draw/ColorPicker.js",
     "components/Draw/CanvasComponent.js",
+    "components/Draw/ColorPicker.js",
     "components/Draw/ColorGrid.js",
-    "components/Auth/user.js"
+
+    "pages/api/saveDrawing.tsx", // "pages/api/saveDrawing.js",
+    "pages/api/drawings.js"
   ],
   "exclude": ["node_modules"]
 }

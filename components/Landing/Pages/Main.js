@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Nav from "../Nav/Nav";
 
 const Main = () => {
   const router = useRouter();
@@ -12,6 +13,7 @@ const Main = () => {
 
   return (
     <>
+      <Nav />
       <a name="Main"></a>
       <div
         id="container"

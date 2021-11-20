@@ -162,8 +162,14 @@ const Footer = () => {
             </span>
             <div className="flex justify-between text-gray-300">
               <span>
-                <a href="https://mintbean.io/" rel="noreferrer" target="_blank">
-                  Thank you @Mintbean!
+                Thank you
+                <a
+                  href="https://mintbean.io/"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="pl-2 text-green-400 transition-all ease-in "
+                >
+                  @Mintbean!
                 </a>
               </span>
             </div>

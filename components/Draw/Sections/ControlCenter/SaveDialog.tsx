@@ -9,18 +9,24 @@ const SaveDialog = () => {
   const [title, setTitle] = useState('');
   const [itSaved, setItSaved] = useState(false);
 
+  console.log(title);
+
+  type SaveData = { data: string; ownerId: string; title: string };
+
   const handleSaveDrawing = async () => {
-    const drawingString = await canvasRef.current.getSaveData();
-    const data = {
+    const drawingString = await canvasRef?.current.getSaveData();
+    const data: SaveData = {
       data: drawingString,
       ownerId: activeUser?.id,
       title: title,
     };
     try {
       await saveData(data);
+      console.log('saved!');
       await setItSaved(true);
       canvasRef.current.clear();
     } catch (error) {
+      console.log('failed at req');
       console.log(error);
     }
   };

@@ -31,12 +31,10 @@ const Nav = () => {
   };
 
   return (
-
-    <div className="flex flex-row items-center w-full my-3 justify-evenly h-9">
-      <div className="flex flex-row items-center justify-center space-x-5">
-
+    <div className="flex flex-row items-center w-full my-3 justify-evenly h-9 ">
+      <div className=" flex flex-row items-center justify-center space-x-5 ">
         <PenSVG />
-        <button>
+        <button className=" transition-all ease-in hover:opacity-100 opacity-70">
           <a href="#About">About Us</a>
         </button>
       </div>
@@ -51,11 +49,12 @@ const Nav = () => {
         <div className="text-xs ">by $5sweater</div>
       </div>
 
-      <div className="flex flex-row items-center justify-center space-x-5">
+      <div className="flex flex-row items-center justify-center space-x-5 ">
         <a
           href="https://github.com/5-dollar-sweaters/mintbean-drawing-program"
           rel="noreferrer"
           target="_blank"
+          className="transition-all ease-in hover:opacity-100 opacity-70"
         >
           Github
         </a>
@@ -66,7 +65,7 @@ const Nav = () => {
           <div>...loading</div>
         ) : (
           <>
-            <div>
+            <div className="transition-all ease-in hover:opacity-100 opacity-70">
               <User userFromNav={activeUser} />
             </div>
           </>
