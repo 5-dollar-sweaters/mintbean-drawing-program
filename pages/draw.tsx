@@ -38,21 +38,44 @@ const Draw: NextPage = () =>
             <link rel='icon' href='/favicon.ico' />
           </Head>
 
-          <div>
-            <ColorMain />
-          </div>
 
-          <div>
-            <CanvasMain />
-          </div>
-
-          <div>
-            <ControlCenter />
-          </div>
-        </div>
-      </>
-    );
+  const handleSave = async () => {
+    const savedDrawing = canvasRef?.current?.getSaveData();
+    const dataToSave: DATA_TO_SAVE = {
+      sketchId: savedDrawing,
+      userId: "fornow",
+    };
+    try {
+      // await saveData(dataToSave);
+      console.log(dataToSave);
+      // console.log('You saved it!');
+    } catch (error) {}
   };
+
+  return (
+    <>
+      <div
+        id="container"
+        className="flex flex-col justify-between w-full h-screen m-auto bg-gray-400 md:flex-row"
+      >
+        <Head>
+          <title>Gahw Drahw</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div>
+          <ColorMain />
+        </div>
+        <div>
+          <CanvasMain />
+        </div>
+        <div>
+          <ControlCenter />
+        </div>
+      </div>
+    </>
+  );
+};
+
 
 export default Draw;
 
