@@ -14,7 +14,9 @@ import ColorMain from '../components/Draw/Sections/ColorPicker/ColorMain';
 import ControlCenter from '../components/Draw/Sections/ControlCenter/ControlMain';
 import CanvasMain from '../components/Draw/Sections/Canvas/CanvasMain';
 
-const Draw: NextPage = (props) =>
+const Draw: NextPage = (
+  props: InferGetServerSidePropsType<typeof getServerSideProps>
+) =>
   //   props: InferGetServerSidePropsType<typeof getServerSideProps>
   {
     const { activeUser, setActiveUser, canvasRef } = useStore();
@@ -37,14 +39,16 @@ const Draw: NextPage = (props) =>
             <title>Gahw Drahw</title>
             <link rel='icon' href='/favicon.ico' />
           </Head>
-          <div>
-            <ColorMain />
-          </div>
-          <div>
-            <CanvasMain />
-          </div>
-          <div>
-            <ControlCenter />
+          <div className='flex flex-col items-center justify-between w-full h-full m-auto space-y-6 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
+            <div className='w-full lg:w-2/12'>
+              <ColorMain />
+            </div>
+            <div className='w-full lg:w-7/12'>
+              <CanvasMain />
+            </div>
+            <div className='w-full lg:w-7/12'>
+              <ControlCenter />
+            </div>
           </div>
         </div>
       </>
