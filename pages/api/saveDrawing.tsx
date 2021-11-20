@@ -11,7 +11,7 @@ export default async function saveDrawing(
 
   type Data = { data: string; title: string; id: string };
 
-  const drawingData = JSON.parse(req.body);
+  const drawingData = await JSON.parse(req.body);
   console.log(drawingData);
   const savedDrawing = await prisma.drawing.create({
     data: {
