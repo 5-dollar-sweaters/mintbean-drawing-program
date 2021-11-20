@@ -9,13 +9,15 @@ export default async function saveDrawing(
     return res.status(405).json({ message: 'Method not allowed ' });
   }
 
+  type Data = { data: string; title: string; id: string };
+
   const drawingData = JSON.parse(req.body);
   console.log(drawingData);
   const savedDrawing = await prisma.drawing.create({
     data: {
-      data: drawingData?.data,
-      title: drawingData?.title,
-      owner: { connect: { id: drawingData?.ownerId } },
+      data: drawingData.data,
+      title: drawingData.title,
+      owner: { connect: { id: drawingData.ownerId } },
     },
   });
   res.json(savedDrawing);
