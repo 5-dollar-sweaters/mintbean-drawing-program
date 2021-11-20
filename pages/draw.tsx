@@ -14,7 +14,7 @@ import ColorMain from '../components/Draw/Sections/ColorPicker/ColorMain';
 import ControlCenter from '../components/Draw/Sections/ControlCenter/ControlMain';
 import CanvasMain from '../components/Draw/Sections/Canvas/CanvasMain';
 
-const Draw: NextPage = () =>
+const Draw: NextPage = (props) =>
   //   props: InferGetServerSidePropsType<typeof getServerSideProps>
   {
     const { activeUser, setActiveUser, canvasRef } = useStore();
@@ -31,56 +31,30 @@ const Draw: NextPage = () =>
       <>
         <div
           id='container'
-          className='flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row'
+          className='flex flex-col justify-between w-full h-screen m-auto bg-gray-400 md:flex-row'
         >
           <Head>
             <title>Gahw Drahw</title>
             <link rel='icon' href='/favicon.ico' />
           </Head>
-
-
-  const handleSave = async () => {
-    const savedDrawing = canvasRef?.current?.getSaveData();
-    const dataToSave: DATA_TO_SAVE = {
-      sketchId: savedDrawing,
-      userId: "fornow",
-    };
-    try {
-      // await saveData(dataToSave);
-      console.log(dataToSave);
-      // console.log('You saved it!');
-    } catch (error) {}
+          <div>
+            <ColorMain />
+          </div>
+          <div>
+            <CanvasMain />
+          </div>
+          <div>
+            <ControlCenter />
+          </div>
+        </div>
+      </>
+    );
   };
-
-  return (
-    <>
-      <div
-        id="container"
-        className="flex flex-col justify-between w-full h-screen m-auto bg-gray-400 md:flex-row"
-      >
-        <Head>
-          <title>Gahw Drahw</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div>
-          <ColorMain />
-        </div>
-        <div>
-          <CanvasMain />
-        </div>
-        <div>
-          <ControlCenter />
-        </div>
-      </div>
-    </>
-  );
-};
-
 
 export default Draw;
 
 // export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-//   const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
+// const userReq: any = await fetch(`${process.env.NEXT_APP_URL}/api/user`);
 //   const dbUser: any = await userReq.json();
 //   console.log(userReq);
 //   return {
@@ -89,3 +63,4 @@ export default Draw;
 //     },
 //   };
 // };
+//
