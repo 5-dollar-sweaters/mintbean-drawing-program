@@ -25,8 +25,6 @@ module.exports = {
       backgroundImage: {
         "card-background":
           "url('https://www.photos-public-domain.com/wp-content/uploads/2011/01/yellow-notebook-paper-texture.jpg')",
-        "purple-grad":
-          "url('https://img.chainimage.com/images/purple-gradient-background-83.jpg')",
       },
     },
   },
