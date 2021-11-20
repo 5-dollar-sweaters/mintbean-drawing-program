@@ -46,21 +46,18 @@ const Draw: NextPage = (
     <>
       <div
         id="container"
-        className="flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row"
+        className="flex flex-col justify-between w-full h-screen m-auto bg-gray-400 md:flex-row"
       >
         <Head>
           <title>Gahw Drahw</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <div>
           <ColorMain />
         </div>
-
         <div>
           <CanvasMain />
         </div>
-
         <div>
           <ControlCenter />
         </div>
