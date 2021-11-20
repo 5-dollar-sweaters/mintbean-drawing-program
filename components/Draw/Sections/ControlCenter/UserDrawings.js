@@ -1,21 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
 import { useStore } from 'lib/zustand/store';
-import { useUser } from '@auth0/nextjs-auth0';
 
 const UserDrawings = () => {
-  const { user } = useUser;
   const { activeUser, canvasRef } = useStore();
   const [activeDrawing, setActiveDrawing] = useState('');
   const { data, error, mutate } = useSWR(
     `/api/drawings?ownerId=${activeUser?.id}`,
     fetcher
   );
-
-  useEffect(() => {
-    mutate();
-  }, [activeUser, activeDrawing]);
 
   const handleSelectTitle = (drawing) => {
     setActiveDrawing(drawing.id);
