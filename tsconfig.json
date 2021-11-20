@@ -24,7 +24,8 @@
     "components/Draw/ColorPicker.js",
     "components/Draw/CanvasComponent.js",
     "components/Draw/ColorGrid.js",
-, "pages/api/saveDrawing.js"    "pages/api/drawings.js"
+    "pages/api/saveDrawing.js",
+    "pages/api/drawings.js"
   ],
   "exclude": ["node_modules"]
 }
