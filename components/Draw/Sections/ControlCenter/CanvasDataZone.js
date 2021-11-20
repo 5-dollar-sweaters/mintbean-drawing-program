@@ -3,31 +3,31 @@ import { useState } from 'react';
 import React from 'react';
 import { useSaveStore, useStore } from 'lib/zustand/store';
 import { saveData } from 'utils/prismaHelpers';
-import SaveDialog from 'components/Draw/Sections/ControlCenter/SaveDialog';
+import SaveDialog from './SaveDialog';
 
 const CanvasDataZone = () => {
   const { user } = useUser();
   const { canvasRef, activeUser } = useStore();
   const { showSaveBox, setShowSaveBox } = useSaveStore();
-  const [title, setTitle] = useState('');
+  // const [title, setTitle] = useState('');
 
-  console.log(title);
+  // console.log(title);
 
-  const handleSaveDrawing = async () => {
-    const drawingString = await canvasRef.current.getSaveData();
-    const data = {
-      data: drawingString,
-      ownerId: activeUser?.id,
-      title: title,
-    };
-    try {
-      await saveData(data);
-      await alert('saved');
-      canvasRef.current.clear();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleSaveDrawing = async () => {
+  //   const drawingString = await canvasRef.current.getSaveData();
+  //   const data = {
+  //     data: drawingString,
+  //     ownerId: activeUser?.id,
+  //     title: title,
+  //   };
+  //   try {
+  //     await saveData(data);
+  //     await alert('saved');
+  //     canvasRef.current.clear();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const buttonStyle =
     'w-11/12 py-1 text-gray-100 transition-all duration-300   bg-gray-400 rounded-md hover:bg-gray-200 hover:text-gray-600';
