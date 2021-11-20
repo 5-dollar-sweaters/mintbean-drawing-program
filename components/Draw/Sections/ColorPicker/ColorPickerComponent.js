@@ -1,13 +1,18 @@
-import { HexColorPicker } from "react-colorful";
-import { useStore } from "../../../../lib/zustand/store";
+import { HexColorPicker } from 'react-colorful';
+import { useStore } from 'lib/zustand/store';
+import styles from 'components/Draw/Sections/ColorPicker/ColorPickerComponent.module.css';
 
 const ColorPickerComponent = () => {
   const { brushColor, setBrushColor } = useStore();
 
   return (
-    <div className="w-full">
-      <HexColorPicker color={brushColor} onChange={setBrushColor} />
-    </div>
+    <section className={styles.responsive}>
+      <HexColorPicker
+        color={brushColor}
+        onChange={setBrushColor}
+        className='w-auto'
+      />
+    </section>
   );
 };
 

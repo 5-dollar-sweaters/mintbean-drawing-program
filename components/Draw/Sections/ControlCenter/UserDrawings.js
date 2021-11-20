@@ -1,24 +1,33 @@
+import { useState } from 'react';
 import useSWR from 'swr';
-import { fetcher } from '../../../../lib/swr/fetcher';
-import { useStore } from '../../../../lib/zustand/store';
+import { fetcher } from 'lib/swr/fetcher';
+import { useStore } from 'lib/zustand/store';
 
 const UserDrawings = () => {
   const { activeUser, canvasRef } = useStore();
+  const [activeDrawing, setActiveDrawing] = useState('');
   const { data, error, mutate } = useSWR(
-    `/api/drawings?ownerId=${activeUser.id}`,
+    `/api/drawings?ownerId=${activeUser?.id}`,
     fetcher
   );
 
+  const handleSelectTitle = (drawing) => {
+    setActiveDrawing(drawing.id);
+    canvasRef.current.loadSaveData(drawing.data);
+  };
+
   return (
-    <div className='bg-white rounded-md w-36 '>
+    <div className='grid w-full grid-cols-2 p-3 space-y-2 overflow-scroll bg-white border-4 border-white rounded-md lg:flex lg:flex-col h-44 '>
       {data ? (
         data.map((drawing, i) => (
           <button
-            className='text-xs'
+            className={`px-2 py-1 text-sm text-left capitalize rounded-sm hover:bg-gray-200  ${
+              activeDrawing === drawing.id ? 'bg-gray-400' : null
+            }`}
             key={`user-drawing-${i}`}
-            onClick={() => canvasRef.current.loadSaveData(drawing.data)}
+            onClick={() => handleSelectTitle(drawing)}
           >
-            {drawing?.id}
+            {drawing?.title}
           </button>
         ))
       ) : (

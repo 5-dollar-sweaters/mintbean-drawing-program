@@ -22,43 +22,23 @@ const Draw: NextPage = (
   const { user } = useUser();
   type DATA_TO_SAVE = { sketchId: string; userId: string };
 
-  const GetData = (endpoint: string) => {
-    try {
-      const { data, error, mutate } = useSWR(user && `${endpoint}`, fetcher);
-      return { data };
-    } catch (error) {
-      console.log('error:', error);
-      throw error;
-    }
-  };
-
-  const userData = GetData('/api/user');
-
-  useEffect(() => {
-    user && setActiveUser(userData?.data);
-  }, [userData.data]);
-
   return (
-    <div
-      id='container'
-      className='flex flex-col justify-between w-full h-screen p-6 m-auto bg-gray-400 md:flex-row'
-    >
+    <div id='container' className='w-full p-6 bg-gray-400 '>
       <Head>
         <title>Gahw Drahw</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div>
-        <ColorMain />
-        <h1> test</h1>
-      </div>
-
-      <div>
-        <CanvasMain />
-      </div>
-
-      <div>
-        <ControlCenter />
+      <div className='flex flex-col items-center justify-between w-full h-full m-auto space-y-6 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
+        <div className='w-full lg:w-2/12'>
+          <ColorMain />
+        </div>
+        <div className='w-full lg:w-7/12'>
+          <CanvasMain />
+        </div>
+        <div className='w-full lg:w-2/12'>
+          <ControlCenter />
+        </div>
       </div>
     </div>
   );

@@ -9,13 +9,13 @@ export default function Home(props) {
   const { user } = useUser();
 
   return (
-    <div className='flex flex-col min-h-screen py-2 m-auto'>
+    <div className='flex flex-col min-h-screen p-0 m-0 '>
       <Head>
         <title>Create Next App</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='z-10 flex flex-col w-full text-black'>
+      <div className='z-10 flex flex-col w-full p-0 m-0 text-black'>
         <Hero />
       </div>
     </div>
