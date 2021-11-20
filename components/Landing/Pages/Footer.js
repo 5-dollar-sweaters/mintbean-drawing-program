@@ -77,6 +77,8 @@ const Footer = () => {
                     <li>
                       <a
                         href="https://github.com/icld"
+                        rel="noreferrer"
+                        target="_blank"
                         className="text-base font-normal text-gray-300 hover:text-blue-400"
                       >
                         {" "}
@@ -86,6 +88,8 @@ const Footer = () => {
                     <li>
                       <a
                         href="https://www.linkedin.com/in/icld/"
+                        rel="noreferrer"
+                        target="_blank"
                         className="text-base font-normal text-gray-300 hover:text-blue-400"
                       >
                         {" "}
@@ -95,6 +99,8 @@ const Footer = () => {
                     <li>
                       <a
                         href="https://www.icld.io/"
+                        rel="noreferrer"
+                        target="_blank"
                         className="text-base font-normal text-gray-300 hover:text-blue-400"
                       >
                         {" "}
@@ -112,6 +118,8 @@ const Footer = () => {
                     <li>
                       <a
                         href="https://github.com/jumpybuns"
+                        rel="noreferrer"
+                        target="_blank"
                         className="text-base font-normal text-gray-300 hover:text-blue-400"
                       >
                         {" "}
@@ -121,6 +129,8 @@ const Footer = () => {
                     <li>
                       <a
                         href="https://www.linkedin.com/in/ethanpiercepresents/"
+                        rel="noreferrer"
+                        target="_blank"
                         className="text-base font-normal text-gray-300 hover:text-blue-400"
                       >
                         {" "}
@@ -130,6 +140,8 @@ const Footer = () => {
                     <li>
                       <a
                         href="https://ethanpierce.netlify.app/"
+                        rel="noreferrer"
+                        target="_blank"
                         className="text-base font-normal text-gray-300 hover:text-blue-400"
                       >
                         {" "}
@@ -143,18 +155,18 @@ const Footer = () => {
           </div>
         </div>
         <div className="px-4 py-4 mx-auto bg-gray-900 max-w-7xl sm:px-6 lg:px-16">
-          <div className="flex flex-wrap items-baseline">
+          <div className="flex flex-wrap justify-between items-baseline">
             <span className="mt-2 text-sm font-light text-gray-300">
               {" "}
-              Copyright © 2021
-              <a
-                href="https://wickedlabs.dev"
-                className="mx-2 text-wickedblue hover:text-gray-300"
-                rel="noopener noreferrer"
-              >
-                @$5Sweater
-              </a>
+              Copyright © 2021 @$5sweater
             </span>
+            <div className="flex justify-between text-gray-300">
+              <span>
+                <a href="https://mintbean.io/" rel="noreferrer" target="_blank">
+                  Thank you @Mintbean!
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </footer>

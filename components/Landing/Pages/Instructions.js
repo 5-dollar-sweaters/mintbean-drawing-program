@@ -33,7 +33,7 @@ const Instructions = () => {
                   <div
                     key={i}
                     id="card"
-                    className=" text-white font-fancy bg-purple-400 w-32 lg:w-60 h-64 border-4 p-4 border-black rounded-md "
+                    className=" text-white font-fancy from-purple-300 bg-gradient-to-l w-32 lg:w-60 h-64 border-4 p-4 border-black rounded-md "
                   >
                     {instruction.inst}
                   </div>

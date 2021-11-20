@@ -39,7 +39,7 @@ const Main = () => {
             className="flex flex-col items-center mb-8 lg:mb-0 pt-4 "
           >
             <button
-              className="flex flex-row items-center justify-center w-24 h-10 font-bold text-black border-2 border-black rounded-full cursor-pointer bg-grey-100 hover:bg-blue-700 hover:border-blue-700 hover:text-white"
+              className="flex flex-row items-center justify-center w-24 h-10 font-bold text-black border-2 border-black rounded-full cursor-pointer bg-grey-100 transition-all ease-in-out hover:bg-blue-700 hover:border-blue-700 hover:text-white"
               onClick={() => handleTryIt()}
             >
               Try It
