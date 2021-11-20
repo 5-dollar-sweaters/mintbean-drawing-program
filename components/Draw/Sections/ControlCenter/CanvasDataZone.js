@@ -3,7 +3,7 @@ import { useState } from 'react';
 import React from 'react';
 import { useSaveStore, useStore } from 'lib/zustand/store';
 import { saveData } from 'utils/prismaHelpers';
-import SaveDialog from 'components/Draw/Sections/ControlCenter/SaveDialog';
+import SaveDialog from './SaveDialog';
 
 const CanvasDataZone = () => {
   const { user } = useUser();
