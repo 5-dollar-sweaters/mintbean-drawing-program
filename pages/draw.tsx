@@ -31,22 +31,19 @@ const Draw: NextPage = (
 
     return (
       <>
-        <div
-          id='container'
-          className='flex flex-col justify-between w-full h-screen m-auto bg-gray-400 md:flex-row'
-        >
+        <div id='container' className='w-full p-6 bg-gray-400'>
           <Head>
             <title>Gahw Drahw</title>
             <link rel='icon' href='/favicon.ico' />
           </Head>
           <div className='flex flex-col items-center justify-between w-full h-full m-auto space-y-6 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
-            <div className='w-full lg:w-2/12'>
+            <div className='w-full mx-6 lg:w-2/12'>
               <ColorMain />
             </div>
-            <div className='w-full lg:w-7/12'>
+            <div className='w-full mx-6 lg:w-7/12'>
               <CanvasMain />
             </div>
-            <div className='w-full lg:w-7/12'>
+            <div className='w-full mx-6 lg:w-2/12'>
               <ControlCenter />
             </div>
           </div>
