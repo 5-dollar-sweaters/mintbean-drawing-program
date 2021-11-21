@@ -57,14 +57,14 @@ const Instructions = () => {
                   <div
                     key={i}
                     id="card"
-                    className=" flex flex-col  text-center text-black bg-gray-100 h-52 w-32 lg:w-48 lg:h-64 border-4 p-4 border-black rounded-md drop-shadow-sm shadow-lg "
+                    className=" flex flex-col justify-evenly text-white text-center font-fancy  bg-black h-52 w-32 lg:w-48 lg:h-64 border-4 p-4 border-black rounded-md drop-shadow-sm shadow-lg "
                   >
-                    <div className=" flex flex-col justify-around bg-gray-400">
+                    <div className=" flex flex-col justify-around bg-black">
                       Step {instruction.step}
+                      <div className=" absolute rounded-xl opacity-30 h-1/6 w-5/6 bg-gray-800 shadow-xl"></div>
                     </div>
-                    <div className=" flex content-evenly justify-around bg-gray-900 ">
-                      {instruction.inst}
-                    </div>
+                    <div className=" flex  ">{instruction.inst}</div>
+                    <div className=" absolute flex justify-around rounded-xl opacity-20 h-5/6 w-5/6 bg-black shadow-lg"></div>
                   </div>
                 );
               })}

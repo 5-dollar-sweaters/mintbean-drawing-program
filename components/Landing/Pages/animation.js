@@ -7,7 +7,7 @@ export const scrollingCards = (elem) =>
   gsap.to(elem, {
     scrollTrigger: {
       trigger: elem,
-      toggleActions: "play resume resume pause",
+      toggleActions: "reverse reverse reverse reverse",
       start: "top 50%",
       end: "bottom 200px",
       scrub: true,
