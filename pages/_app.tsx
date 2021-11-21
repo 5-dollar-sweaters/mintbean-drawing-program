@@ -6,11 +6,13 @@ import Footer from 'components/Landing/Pages/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <UserProvider>
-      <Nav />
-      <Component {...pageProps} />
-      <Footer />
-    </UserProvider>
+    <div className='flex flex-col'>
+      <UserProvider>
+        <Nav />
+        <Component {...pageProps} />
+        <Footer />
+      </UserProvider>
+    </div>
   );
 }
 
