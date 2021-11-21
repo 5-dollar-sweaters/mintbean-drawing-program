@@ -19,7 +19,32 @@ const DropDownControl = () => {
   const { setShowControls, showControls, control, setControl } =
     useControlStore();
 
-  const handleShowDrawingControls = () => {};
+  const handleSaveControls = () => {
+    if (showControls && control === 'save') {
+      setShowControls(false);
+    } else {
+      setShowControls(true);
+      setControl('save');
+    }
+  };
+
+  const handleLoadFileControls = () => {
+    if (showControls && control === 'load') {
+      setShowControls(false);
+    } else {
+      setShowControls(true);
+      setControl('load');
+    }
+  };
+
+  const handleColorControls = () => {
+    if (showControls && control === 'color') {
+      setShowControls(false);
+    } else {
+      setShowControls(true);
+      setControl('color');
+    }
+  };
 
   return (
     <>
@@ -36,12 +61,12 @@ const DropDownControl = () => {
               onClick={() => setShowControls(true)}
             />
           )}
-          <BsPencil onClick={() => setControl('color')} />
+          <BsPencil onClick={handleColorControls} />
           <FiDownloadCloud
             className='text-xl'
-            onClick={() => setControl('load')}
+            onClick={handleLoadFileControls}
           />
-          <FiSave className='text-xl ' onClick={() => setControl('save')} />
+          <FiSave className='text-xl ' onClick={handleSaveControls} />
         </nav>
       </div>
       {/* Mobile Control */}

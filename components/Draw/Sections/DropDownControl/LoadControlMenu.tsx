@@ -8,7 +8,7 @@ const LoadControlMenu = () => {
   const { activeUser, canvasRef } = useStore();
   const [activeDrawing, setActiveDrawing] = useState('');
   const { data, error, mutate } = useSWR(
-    `/api/drawings?ownerId=${activeUser?.id}`,
+    activeUser && `/api/drawings?ownerId=${activeUser?.id}`,
     fetcher
   );
 
