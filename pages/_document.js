@@ -20,7 +20,7 @@ class MyDocument extends Document {
 
         {/* TW screen debugger in dev  */}
         <body
-          className={` relative overflow-x-hidden ${
+          className={` relative overflow-hidden ${
             process.env.NODE_ENV !== 'production' && 'debug-screens'
           }`}
         >
