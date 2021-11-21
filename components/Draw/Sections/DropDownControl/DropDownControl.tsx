@@ -46,38 +46,39 @@ const DropDownControl = () => {
     }
   };
 
+  const buttonStyles =
+    'text-xl text-black transition-all duration-200 ease-linear hover:scale-125';
+
   return (
     <>
       <div className='absolute left-0 z-50 w-full h-12 bg-red-200 lg:hidden'>
         <nav className='flex flex-row items-center justify-between w-full h-full px-4'>
           {showControls ? (
             <FiChevronUp
-              className='text-2xl text-black'
+              className={`  text-3xl ${buttonStyles}`}
               onClick={() => setShowControls(false)}
             />
           ) : (
             <FiChevronDown
-              className='text-2xl text-black '
+              className={buttonStyles}
               onClick={() => setShowControls(true)}
             />
           )}
-          <BsPencil onClick={handleColorControls} />
+          <BsPencil className={buttonStyles} onClick={handleColorControls} />
           <FiDownloadCloud
-            className='text-xl'
+            className={buttonStyles}
             onClick={handleLoadFileControls}
           />
-          <FiSave className='text-xl ' onClick={handleSaveControls} />
+          <FiSave className={buttonStyles} onClick={handleSaveControls} />
         </nav>
       </div>
       {/* Mobile Control */}
       <div
-        className={` left-0 absolute z-10 w-full h-1/3 bg-gray-700 rounded-lg bg-opacity-90  transition duration-300 ease-in-out  ${
+        className={` left-0 absolute z-10 w-full h-1/3  rounded-lg  bg-gray-900 bg-opacity-20  backdrop-filter backdrop-blur-lg  transition duration-300 ease-in-out  ${
           showControls ? '-translate-y-0' : '-translate-y-full'
         } `}
       >
         <div className='flex flex-col items-center justify-center w-full h-full m-auto'>
-          {/* Color Control */}
-
           {control === 'color' && (
             <div>
               <ColorControlMenu />
@@ -96,7 +97,7 @@ const DropDownControl = () => {
             </div>
           )}
           <div
-            className='absolute bottom-0 z-10 flex flex-row justify-end w-full h-4 pr-4 overflow-hidden transition-all duration-300 bg-gray-300 bg-opacity-50 rounded-b-lg cursor-pointer hover:bg-gray-100 hover:bg-opacity-50 hover:h-6 group'
+            className='absolute bottom-0 z-10 flex flex-row justify-end w-full h-4 pr-4 overflow-hidden transition-all duration-300 bg-gray-200 bg-opacity-50 rounded-b-lg cursor-pointer hover:bg-gray-300 hover:bg-opacity-50 hover:h-6 group'
             onClick={() => setShowControls(false)}
           >
             <button className='translate-y-10 group-hover:translate-y-0 '>
