@@ -12,6 +12,9 @@ export default async function drawings(req, res) {
     where: {
       ownerId: query,
     },
+    orderBy: {
+      createdAt: 'desc',
+    },
   });
   res.json(drawings);
 }
