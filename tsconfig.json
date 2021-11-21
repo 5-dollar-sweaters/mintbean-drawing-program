@@ -26,7 +26,8 @@
     "components/Draw/ColorGrid.js",
 
     "pages/api/saveDrawing.tsx", // "pages/api/saveDrawing.js",
-    "pages/api/drawings.js"
+    "pages/api/drawings.js",
+    "lib/zustand/store.js"
   ],
   "exclude": ["node_modules"]
 }
