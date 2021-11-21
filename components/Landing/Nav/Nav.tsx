@@ -31,7 +31,7 @@ const Nav = () => {
   };
 
   return (
-    <div className='w-full my-3 h-9'>
+    <div className='w-full h-12 mt-3 mb-4'>
       {/* <div className="flex flex-row items-center justify-center space-x-5 ">
         <PenSVG />
         <button className="transition-all ease-in hover:opacity-100 opacity-70">
@@ -56,7 +56,7 @@ const Nav = () => {
           onClick={() => router.push('/draw')}
           className='flex flex-col items-center justify-start cursor-pointer md:justify-center md:w-5/12'
         >
-          <div className='text-2xl font-fancy md:text-xl md:text-4xl'>
+          <div className='text-2xl font-fancy md:text-xl lg:text-4xl'>
             Drawing App
           </div>
           {/* <div className='text-xs '>by $5sweater</div> */}
