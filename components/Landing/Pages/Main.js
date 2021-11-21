@@ -16,15 +16,15 @@ const Main = () => {
       <a name='Main'></a>
       <div
         id='container'
-        className='flex flex-col items-center h-screen lg:flex-row justify-evenly bg-grey-100'
+        className='flex flex-col items-center lg:h-screen lg:flex-row justify-evenly bg-grey-100'
       >
         <div
           id='content'
           className='flex flex-col justify-center mt-8 lg:mt-0 flex-nowrap'
         >
           <div id='main' className='flex flex-col '>
-            <h1 className='text-4xl  lg:text-6xl font-fancy'>Creativity</h1>
-            <h2 className='py-2 text-2xl lg:text-3xl '>
+            <h1 className='text-5xl lg:text-7xl font-fancy'>Creativity</h1>
+            <h2 className='py-2 text-3xl lg:text-4xl '>
               at your<br></br> fingertips
             </h2>
           </div>
