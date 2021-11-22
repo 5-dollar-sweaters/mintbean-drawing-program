@@ -62,7 +62,9 @@ const Instructions = () => {
                     <div className=" flex flex-col justify-around z-30 ">
                       Step {instruction.step}
                     </div>
-                    <div className=" flex z-30  ">{instruction.inst}</div>
+                    <div className=" flex z-30 font-sans p-2 ">
+                      {instruction.inst}
+                    </div>
                     <div className=" absolute flex justify-around rounded-xl opacity-80 h-5/6 w-5/6 bg-black shadow-lg z-0"></div>
                   </div>
                 );

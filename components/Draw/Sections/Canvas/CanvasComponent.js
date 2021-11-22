@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
-import CanvasDraw from 'react-canvas-draw';
+import { useEffect, useRef, useState } from "react";
+import CanvasDraw from "react-canvas-draw";
 
-import { useStore } from 'lib/zustand/store';
-import useWindowDimensions from 'utils/useWindowDimensions';
+import { useStore } from "lib/zustand/store";
+import useWindowDimensions from "utils/useWindowDimensions";
 
 const CanvasComponent = () => {
   const canvasReference = useRef();
@@ -15,7 +15,8 @@ const CanvasComponent = () => {
 
   useEffect(() => {
     if (width <= +1023) {
-      console.log('cool');
+      console.log("cool");
+
       setCanvasW(800);
       setCanvasH(900);
     } else {
