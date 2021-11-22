@@ -66,20 +66,27 @@ const Nav = () => {
           <div
             onMouseEnter={() => setChangeTitle(true)}
             onMouseLeave={() => setChangeTitle(false)}
-            className={`text-2xl font-fancy md:text-xl lg:text-4xl w-56 ${
-              router.pathname === '/draw' && 'text-white'
-            }`}
+            className={`text-2xl font-fancy md:text-xl lg:text-4xl w-56 h-12 flex items-center
+             ${router.pathname === '/draw' && 'text-white'}`}
           >
             {router.pathname === '/draw' ? (
-              <>
-                <div className=''>
-                  {changeTitle ? 'Head Home' : 'Drawing App'}
+              <div className='flex flex-row items-center transition-all duration-200 group'>
+                <div
+                  className={` -translate-x-56 absolute  transition-all duration-200 ${
+                    changeTitle && '-translate-x-0'
+                  }`}
+                >
+                  Head Home
                 </div>
 
-                {/* <div className={`block ${changeTitle && 'hidden'}`}>
+                <div
+                  className={` absolute transition-all duration-200 ${
+                    changeTitle && '-translate-x-56'
+                  }`}
+                >
                   Drawing App
-                </div> */}
-              </>
+                </div>
+              </div>
             ) : (
               <div>Drawing App</div>
             )}
