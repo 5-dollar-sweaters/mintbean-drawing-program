@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
+import { FiDelete } from 'react-icons/fi';
 
 export const DeleteDrawingById = ({ id, handleRefresh }) => {
   const [deleteIt, setDeleteIt] = useState(false);
@@ -28,10 +29,14 @@ export const DeleteDrawingById = ({ id, handleRefresh }) => {
   };
 
   return (
-    <>
-      <div>
-        <button onClick={() => handleDelete()}>DELETE</button>
-      </div>
-    </>
+    <div>
+      <button
+        className='text-xs text-gray-400 bg-white border rounded-md px-0.5 py-1 hover:text-gray-500 shadow-sm text-shadow-sm'
+        onClick={() => handleDelete()}
+      >
+        <FiDelete className='mx-3 text-lg' />
+        {/* delete */}
+      </button>
+    </div>
   );
 };
