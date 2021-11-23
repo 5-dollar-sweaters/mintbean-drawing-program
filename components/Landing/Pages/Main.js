@@ -70,13 +70,9 @@ const Main = () => {
         </div>
         {/* Video */}
         <div className="relative w-96 h-72">
-          <Image
-            src="/capture.png"
-            alt="image"
-            layout="fill"
-            quality={30}
-            objectFit="cover"
-          />
+          <video loop autoPlay muted className="object-fill w-full h-full">
+            <source src="/pokemon.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </>
