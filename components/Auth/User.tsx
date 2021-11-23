@@ -18,7 +18,7 @@ const User = ({ userFromNav }) => {
   };
 
   return (
-    <div className='flex items-center w-full h-12'>
+    <div className='flex flex-col h-12'>
       <div
         className='flex flex-row duration-200'
         // onClick={() => router.push(`/user/${id}`)}
@@ -33,16 +33,16 @@ const User = ({ userFromNav }) => {
           />
         </div>
 
-        <div className='z-20 ml-2 '>
-          <div
-            className={`-mb-2 text-sm font-medium  capitalize  ${
+        <div className='z-20 flex flex-col ml-2 text-left '>
+          <span
+            className={` text-sm font-medium  capitalize     ${
               router.pathname === '/draw' ? 'text-white' : 'text-gray-700'
             } `}
           >
             {name}
-          </div>
+          </span>
           <button
-            className='text-xs text-gray-400 transition-all duration-150 hover:scale-125 hover:translate-x-1'
+            className='text-xs text-left text-gray-400 transition-all duration-150 hover:scale-125 hover:translate-x-1'
             onClick={() => handleLogOut()}
           >
             Logout

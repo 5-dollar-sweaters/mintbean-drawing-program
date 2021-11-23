@@ -12,8 +12,7 @@ import { fetcher } from '../lib/swr/fetcher';
 import { useStore } from '../lib/zustand/store';
 import ColorMain from '../components/Draw/Sections/ColorPicker/ColorMain';
 import ControlCenter from '../components/Draw/Sections/ControlCenter/ControlMain';
-import CanvasMain from '../components/Draw/Sections/Canvas/CanvasMain';
-import Footer from 'components/Landing/Pages/Footer';
+import CanvasMain from 'components/Draw/Sections/Canvas/CanvasMain';
 import DropDownControl from 'components/Draw/Sections/DropDownControl/DropDownControl';
 import useWindowDimensions from 'utils/useWindowDimensions';
 
@@ -26,39 +25,29 @@ const Draw: NextPage = (
     const { user } = useUser();
     const { width, height } = useWindowDimensions();
 
-    // const { data, error, mutate } = useSWR(user && '/api/user', fetcher);
-
-    // console.log(data);
-
-    // useEffect(() => {
-    //   user && setActiveUser(data);
-    // }, []);
-
     return (
-      <>
-        <div id='container' className='w-full bg-gray-200 '>
-          <Head>
-            <title>Gahw Drahw</title>
-            <link rel='icon' href='/favicon.ico' />
-          </Head>
-          <div className='flex flex-col items-center w-full h-full mx-auto lg:justify-between 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
-            <div className='flex lg:flex-row'>
-              <div className='hidden w-full mb-6 lg:mx-6 lg:w-2/12 lg:flex'>
-                <ColorMain />
-              </div>
-              <div className='w-full lg:hidden'>
-                <DropDownControl />
-              </div>
-              <div className='relative w-full px-6 mx-6 mt-12 md:h-screen lg:w-7/12'>
-                <CanvasMain />
-              </div>
-              <div className='hidden w-full mx-6 lg:w-2/12 lg:flex'>
-                <ControlCenter />
-              </div>
+      <div id='container' className='w-full bg-gray-200 '>
+        <Head>
+          <title>Gahw Drahw</title>
+          <link rel='icon' href='/favicon.ico' />
+        </Head>
+        <div className='flex flex-col items-center w-full h-full mx-auto lg:justify-between 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
+          <div className='flex justify-center lg:flex-row'>
+            <div className='hidden mb-6 lg:mx-6 lg:w-2/12 lg:flex'>
+              <ColorMain />
+            </div>
+            <div className=' lg:hidden'>
+              <DropDownControl />
+            </div>
+            <div className='relative mt-12 md:h-screen lg:w-7/12'>
+              <CanvasMain />
+            </div>
+            <div className='hidden w-full mx-6 lg:w-2/12 lg:flex'>
+              <ControlCenter />
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   };
 

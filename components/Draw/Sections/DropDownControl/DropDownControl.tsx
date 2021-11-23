@@ -50,8 +50,8 @@ const DropDownControl = () => {
     'text-xl text-black transition-all duration-200 ease-linear hover:scale-125';
 
   return (
-    <>
-      <div className='absolute left-0 z-50 w-full h-12 bg-red-200 lg:hidden'>
+    <div className='w-full'>
+      <div className='absolute left-0 z-50 w-full h-12 bg-blue-100 lg:hidden'>
         <nav className='flex flex-row items-center justify-between w-full h-full px-4'>
           {showControls ? (
             <FiChevronUp
@@ -107,7 +107,7 @@ const DropDownControl = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
