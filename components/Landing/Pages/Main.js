@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Nav from "../Nav/Nav";
+import { gsap } from "gsap";
 import { hiddenText } from "./animation";
 
 const Main = () => {
@@ -9,9 +8,15 @@ const Main = () => {
   let text = useRef(null);
   let text2 = useRef(null);
   let text3 = useRef(null);
+  let button = useRef(null);
 
   const handleTryIt = async () => {
     try {
+      await gsap.fromTo(
+        button,
+        { y: 0 },
+        { duration: 1, ease: "power1.in", y: -50 }
+      );
       await router.push("/draw");
     } catch (error) {}
   };
@@ -64,7 +69,7 @@ const Main = () => {
               className=" after:contents overflow-hidden flex flex-row items-center justify-center w-24 h-10 font-bold text-black transition-all ease-in-out border-2 border-black rounded-full cursor-pointer bg-grey-100 hover:bg-blue-700 hover:border-blue-700 hover:text-white"
               onClick={() => handleTryIt()}
             >
-              <span ref={(el) => (text2 = el)}>Try It</span>
+              <span ref={(el) => (button = el)}>Try It</span>
             </button>
           </div>
         </div>

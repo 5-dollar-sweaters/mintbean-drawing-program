@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <div
       id="container"
-      className="flex flex-col w-full h-full text-sm text-white lg:h-screen lg:flex-row lg:flex-1 from-purple-100 to-blue-700 bg-gradient-to-l"
+      className="flex flex-col w-full h-full text-sm text-white lg:h-screen lg:flex-row lg:flex-1 from-purple-300 to-blue-700 bg-gradient-to-l "
     >
       <a name="About"></a>
       <div

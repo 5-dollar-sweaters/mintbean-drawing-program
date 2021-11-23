@@ -1,22 +1,8 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-export const scrollingCards = (elem) =>
-  gsap.to(elem, {
-    scrollTrigger: {
-      trigger: elem,
-      toggleActions: "reverse reverse reverse reverse",
-      start: "top 50%",
-      end: "bottom 200px",
-      scrub: true,
-    },
-    duration: 5,
-    x: -100,
-  });
+export const onClick = (elem) => {
+  elem.addEve;
+};
 
 const tl = gsap.timeline();
 export const hiddenText = (elem, elem2, elem3) => {
