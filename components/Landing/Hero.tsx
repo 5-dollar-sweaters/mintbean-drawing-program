@@ -1,10 +1,10 @@
-import Main from './Pages/Main';
-import Instructions from './Pages/Instructions';
-import AboutUs from './Pages/AboutUs';
+import Main from "./Pages/Main";
+import Instructions from "./Pages/Instructions";
+import AboutUs from "./Pages/AboutUs";
 
 const Hero = () => {
   return (
-    <div className='w-full h-full'>
+    <div className="w-full h-full">
       <Main />
       <Instructions />
       <AboutUs />
