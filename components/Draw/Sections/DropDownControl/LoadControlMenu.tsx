@@ -32,7 +32,7 @@ const LoadControlMenu = () => {
 
   return (
     <div>
-      <h1 className='flex flex-col mb-3 text-center text-shadow-sm '>
+      <h1 className='flex flex-col mb-3 text-center text-shadow-md '>
         <span className='text-xs text-gray-500 font-fancy'> Drawings By</span>{' '}
         <span className='text-xl text-gray-700 font-fancy'>
           {activeUser.name}
