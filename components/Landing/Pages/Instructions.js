@@ -19,7 +19,7 @@ const Instructions = () => {
     Draggable.create(cards, {
       type: "x",
       edgeResistance: 0.65,
-      bounds: "#container",
+      bounds: { width: "0px" },
       inertia: true,
     });
   }, []);
@@ -27,17 +27,20 @@ const Instructions = () => {
   return (
     <>
       <a name="Instructions"></a>
-      <div id="container" className=" bg-gray-900 h-screen mt-8 lg:mt-0">
+      <div
+        id="container"
+        className=" flex-col   bg-gray-900 lg:h-screen lg:mt-0"
+      >
         <div id="top">
           <div
             id="title"
-            className=" flex justify-evenly text-4xl lg:text-6xl text-white font-fancy pt-12"
+            className="  flex justify-evenly text-4xl lg:text-6xl pt-16 text-white font-fancy "
           >
             <h1>A helping hand</h1>
           </div>
           <div
             id="description"
-            className=" flex justify-evenly text-center px-16 py-4 lg:text-2xl text-white"
+            className=" flex text-center lg:text-2xl pt-8 text-white"
           >
             <h2>
               Struggling to get started? <br></br>Scroll down to see a list of
@@ -46,30 +49,24 @@ const Instructions = () => {
           </div>
         </div>
         <div id="bottom">
-          <div id="image-row" className="contents">
-            <div
-              id="cards"
-              ref={(el) => (cards = el)}
-              className=" w-max  inline-grid grid-cols-7 gap-x-12 px-16"
-            >
-              {instructions.map((instruction, i) => {
-                return (
-                  <div
-                    key={i}
-                    id="card"
-                    className=" flex flex-col justify-evenly text-white text-center opacity-80 font-fancy hover:opacity-100  bg-blue-200 h-52 w-32 lg:w-48 lg:h-64 border-4 p-4 border-black rounded-3xl drop-shadow-sm shadow-lg "
-                  >
-                    <div className=" flex flex-col justify-around z-30 ">
-                      Step {instruction.step}
-                    </div>
-                    <div className=" flex z-30 font-sans p-2 ">
-                      {instruction.inst}
-                    </div>
-                    <div className=" absolute flex justify-around rounded-xl opacity-80 h-5/6 w-5/6 bg-black shadow-lg z-0"></div>
-                  </div>
-                );
-              })}
-            </div>
+          <div
+            id="cards"
+            ref={(el) => (cards = el)}
+            className="relative inline-grid grid-cols-6 gap-32 pl-2 "
+          >
+            {instructions.map((instruction, i) => {
+              return (
+                <div
+                  key={i}
+                  id="card"
+                  className="flex flex-col justify-between py-8 px-2 h-80 w-32  text-black text-center  font-fancy hover:opacity-100  bg-blue-200  lg:w-48 lg:h-64 border-4  border-black rounded-3xl filter drop-shadow-sm shadow-lg "
+                >
+                  <div className=" z-30 ">Step {instruction.step}</div>
+                  <div className=" z-30 font-sans  ">{instruction.inst}</div>
+                  <div className=" absolute  rounded-xl bg-black shadow-lg z-0"></div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

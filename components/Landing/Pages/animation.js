@@ -10,8 +10,7 @@ export const scrollingCards = (elem) =>
       toggleActions: "reverse reverse reverse reverse",
       start: "top 50%",
       end: "bottom 200px",
-      scrub: true,
     },
     duration: 5,
-    x: -100,
+    // x: -100,
   });
