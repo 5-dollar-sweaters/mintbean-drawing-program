@@ -34,7 +34,7 @@ const CanvasComponent = () => {
 
   return (
     <CanvasDraw
-      ref={canvasRef}
+      ref={canvasReference}
       hideGrid={true}
       canvasWidth={canvasW}
       canvasHeight={canvasH}

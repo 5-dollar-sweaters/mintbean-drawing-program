@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
 import { useStore } from 'lib/zustand/store';
-import { DeleteDrawingById } from '../ControlCenter/DeleteDrawingById';
+import DeleteButton from '../ControlCenter/DeleteButton';
 
 const LoadControlMenu = () => {
   const { activeUser, canvasRef } = useStore();
@@ -70,7 +70,7 @@ const LoadControlMenu = () => {
                   >
                     {drawing?.title}
                   </button>
-                  <DeleteDrawingById
+                  <DeleteButton
                     id={drawing?.id}
                     handleRefresh={handleRefresh}
                   />
