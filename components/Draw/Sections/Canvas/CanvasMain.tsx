@@ -1,5 +1,4 @@
-import CanvasComponent from './CanvasComponent';
-
+import CanvasComponent from 'components/Draw/Sections/Canvas/CanvasComponent';
 const CanvasMain = () => {
   return (
     <div className='flex items-center justify-center w-full h-full '>
