@@ -10,8 +10,8 @@ import {
 import { useUser, getSession } from '@auth0/nextjs-auth0';
 import { fetcher } from '../lib/swr/fetcher';
 import { useStore } from '../lib/zustand/store';
-import ColorMain from '../components/Draw/Sections/ColorPicker/ColorMain';
-import ControlCenter from '../components/Draw/Sections/ControlCenter/ControlMain';
+import ControlMain from 'components/Draw/Sections/ControlCenter/ControlMain';
+import ControlCenter from 'components/Draw/Sections/ControlCenter/ControlCenter';
 import CanvasMain from 'components/Draw/Sections/Canvas/CanvasMain';
 import DropDownControl from 'components/Draw/Sections/DropDownControl/DropDownControl';
 import useWindowDimensions from 'utils/useWindowDimensions';
@@ -34,7 +34,7 @@ const Draw: NextPage = (
         <div className='flex flex-col items-center w-full h-full mx-auto lg:justify-between 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
           <div className='flex justify-center lg:flex-row'>
             <div className='hidden mb-6 lg:mx-6 lg:w-2/12 lg:flex'>
-              <ColorMain />
+              <ControlMain />
             </div>
             <div className=' lg:hidden'>
               <DropDownControl />

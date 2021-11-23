@@ -21,8 +21,6 @@ const Nav = () => {
     try {
       await router.push('/api/auth/login');
       mutate();
-
-      console.log('logged in');
     } catch (error) {
       console.log(error);
     } finally {

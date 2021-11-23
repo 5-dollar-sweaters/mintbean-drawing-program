@@ -9,8 +9,6 @@ const SaveDialog = () => {
   const [title, setTitle] = useState('');
   const [itSaved, setItSaved] = useState(false);
 
-  console.log(title);
-
   type SaveData = { data: string; ownerId: string; title: string };
 
   const handleSaveDrawing = async () => {

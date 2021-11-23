@@ -28,11 +28,17 @@ const CanvasComponent = () => {
     }
   }, [width]);
 
+<<<<<<< HEAD
   // useEffect(() => {
   //   setCanvasRef(canvasReference);
   // }, []);
   // console.log(canvasRef);
   // console.log(savedData);
+=======
+  useEffect(() => {
+    setCanvasRef(canvasReference);
+  }, []);
+>>>>>>> 2ff4cf68398f1335caafc852f36645d4dd83613f
 
   return (
     <CanvasDraw
