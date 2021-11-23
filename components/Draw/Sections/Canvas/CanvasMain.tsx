@@ -1,4 +1,4 @@
-import CanvasComponent from '../Canvas/CanvasComponent';
+import CanvasComponent from './CanvasComponent';
 
 const CanvasMain = () => {
   return (
