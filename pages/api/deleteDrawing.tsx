@@ -1,18 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import prisma from "lib/prisma/prisma";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import prisma from 'lib/prisma/prisma';
 
-export default async function deleteDrawing(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "DELETE") {
-    return res.status(405).json({ message: "Method not allowed " });
-  }
-  type Data = { id: string };
-
+export default async function deleteDrawing(req, res) {
+  const query = await req.query.drawingId;
+  await console.log(query);
   const deleteDrawing = await prisma.drawing.delete({
     where: {
-      id: req.body.id,
+      id: query,
     },
   });
   res.json(deleteDrawing);

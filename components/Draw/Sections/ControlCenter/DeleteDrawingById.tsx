@@ -1,25 +1,36 @@
-import { useState } from "react";
-import { useStore } from "lib/zustand/store";
-import { deleteData } from "utils/prismaHelpers";
-import { saveData } from "utils/prismaHelpers";
+import { useState, useEffect } from 'react';
 
-export const DeleteDrawingById = () => {
-  const [id, setId] = useState("");
-  const { canvasRef, activeUser } = useStore();
+import useSWR from 'swr';
+import { fetcher } from 'lib/swr/fetcher';
 
-  type DeleteData = { id: string };
+export const DeleteDrawingById = ({ id, handleRefresh }) => {
+  const [deleteIt, setDeleteIt] = useState(false);
+  const { data, error, mutate } = useSWR(
+    deleteIt && `/api/deleteDrawing?drawingId=${id}`,
+    fetcher
+  );
 
-  const handleDelete = async (id) => {
-    const deleteId = await canvasRef?.current.getSaveData();
-    console.log("DELETE ID", deleteId);
-    setId(id);
-    await deleteData(id);
+  useEffect(() => {
+    mutate();
+    setDeleteIt(false);
+  }, [data]);
+
+  const handleDelete = async () => {
+    try {
+      await setDeleteIt(true);
+      await handleRefresh();
+      await console.log('delete something');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      await setDeleteIt(false);
+    }
   };
 
   return (
     <>
       <div>
-        <button onClick={handleDelete}>DELETE</button>
+        <button onClick={() => handleDelete()}>DELETE</button>
       </div>
     </>
   );
