@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import CanvasDraw from 'react-canvas-draw';
+import React, { createRef, useEffect, useRef, useState } from "react";
+import CanvasDraw from "react-canvas-draw";
 
-import { useStore } from 'lib/zustand/store';
-import useWindowDimensions from 'utils/useWindowDimensions';
+import { useStore } from "lib/zustand/store";
+import useWindowDimensions from "utils/useWindowDimensions";
 
 const CanvasComponent = () => {
   const canvasReference = useRef();
+  const [canvasRef, setCanvasRef] = useState();
   const { width, height } = useWindowDimensions();
-  const { lazyRadius1, brushRadius1, brushColor, setCanvasRef, canvasRef } =
-    useStore();
+  const { lazyRadius1, brushRadius1, brushColor } = useStore();
 
   const [canvasW, setCanvasW] = useState(1000);
   const [canvasH, setCanvasH] = useState(900);
@@ -28,9 +28,17 @@ const CanvasComponent = () => {
     }
   }, [width]);
 
+<<<<<<< HEAD
+  // useEffect(() => {
+  //   setCanvasRef(canvasReference);
+  // }, []);
+  // console.log(canvasRef);
+  // console.log(savedData);
+=======
   useEffect(() => {
     setCanvasRef(canvasReference);
   }, []);
+>>>>>>> 2ff4cf68398f1335caafc852f36645d4dd83613f
 
   return (
     <CanvasDraw
