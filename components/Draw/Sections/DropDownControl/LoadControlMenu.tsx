@@ -15,8 +15,6 @@ const LoadControlMenu = () => {
     fetcher
   );
 
-  console.log(data);
-
   useEffect(() => {
     mutate();
   }, [activeUser, activeDrawing]);

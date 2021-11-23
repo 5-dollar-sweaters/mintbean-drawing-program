@@ -8,7 +8,6 @@ const User = ({ userFromNav }) => {
   const { activeUser, setActiveUser } = useStore();
   const router = useRouter();
 
-  console.log(name);
   const handleLogOut = async () => {
     try {
       await router.push('/api/auth/logout');

@@ -23,9 +23,9 @@
 // }
 
 export async function saveData(formData) {
-  console.log("form", formData);
+  console.log('form', formData);
   const response = await fetch(`${process.env.NEXT_APP_URL}/api/saveDrawing`, {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify(formData),
   });
 
@@ -37,11 +37,10 @@ export async function saveData(formData) {
 }
 
 export async function deleteData(id) {
-  console.log("ID", id);
   const response = await fetch(
     `${process.env.NEXT_APP_URL}/api/deleteDrawing/`,
     {
-      method: "DELETE",
+      method: 'DELETE',
       body: id,
     }
   );
