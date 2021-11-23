@@ -36,7 +36,7 @@ const Nav = () => {
         router.pathname === '/draw' && 'bg-gray-700'
       }`}
     >
-      <div className='flex flex-row-reverse items-center justify-between w-11/12 m-auto lg:flex-row lg:justify-center lg:w-10/12 lg:w-9/12 xl:w-8/12 2xl:2-7/12'>
+      <div className='flex flex-row-reverse items-center justify-between w-11/12 m-auto lg:flex-row lg:justify-center lg:w-10/12 xl:w-8/12 2xl:2-7/12'>
         <div className='items-center lg:w-3/12 lg:flex'>
           {!user ? (
             <button onClick={() => handleLogIn()}>LogIn</button>
