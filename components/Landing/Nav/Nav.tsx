@@ -80,7 +80,7 @@ const Nav = () => {
                 </div>
 
                 <div
-                  className={` absolute transition-all duration-200 ${
+                  className={` absolute transition-all duration-200 ease-in-out lg:hover:scale-105 ${
                     changeTitle && "-translate-x-56"
                   }`}
                 >
