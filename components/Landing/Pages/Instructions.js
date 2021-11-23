@@ -20,9 +20,9 @@ const Instructions = () => {
       type: "x",
       edgeResistance: 1,
       bounds: { width: "200px" },
+      throwProps: true,
+      overshootTolerance: 0,
       inertia: true,
-      lockAxis: true,
-      allowNativeTouchScrolling: false,
     });
   }, []);
 
@@ -36,7 +36,7 @@ const Instructions = () => {
         <div id="top">
           <div
             id="title"
-            className="  flex justify-evenly text-4xl  lg:text-6xl pt-16  text-white font-fancy "
+            className="  flex justify-evenly text-4xl mb lg:text-6xl pt-16  text-white font-fancy "
           >
             <h1>A helping hand</h1>
           </div>
@@ -54,7 +54,7 @@ const Instructions = () => {
           <div
             id="cards"
             ref={(el) => (cards = el)}
-            className="relative inline-grid grid-cols-6 gap-36 pl-2 "
+            className="relative inline-grid grid-cols-6 gap-36 lg:gap-52 pl-2 "
           >
             {instructions.map((instruction, i) => {
               return (
@@ -63,7 +63,7 @@ const Instructions = () => {
                   id="card"
                   className="flex flex-col justify-between py-8 px-2 h-80 w-32  text-black text-center  font-fancy hover:opacity-100  bg-blue-200  lg:w-48 lg:h-64 border-4  border-black rounded-3xl filter drop-shadow-sm shadow-lg "
                 >
-                  <div className=" z-30 ">Step {instruction.step}</div>
+                  <div className=" text-3xl z-30 ">Step {instruction.step}</div>
                   <div className=" z-30 font-sans  ">{instruction.inst}</div>
                   <div className=" absolute  rounded-xl bg-black shadow-lg z-0"></div>
                 </div>

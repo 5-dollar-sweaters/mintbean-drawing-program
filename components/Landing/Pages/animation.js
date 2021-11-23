@@ -3,13 +3,14 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const scrollingCards = (elem) =>
-  gsap.to(elem, {
+export const scrollingCards = (el) =>
+  gsap.to(el, {
     scrollTrigger: {
-      trigger: elem,
+      trigger: el,
       toggleActions: "reverse reverse reverse reverse",
       start: "top 50%",
       end: "bottom 200px",
+      markers: true,
     },
     duration: 5,
     x: -100,
@@ -19,13 +20,13 @@ const tl = gsap.timeline();
 export const hiddenText = (elem, elem2, elem3) => {
   tl.fromTo(
     elem,
-    { duration: 10, ease: "power1.out", y: "-200px", rotate: "-20" },
+    { duration: 50, ease: "power1.out", y: "-200px", rotate: "-20" },
     { y: "0px", rotate: 0 }
   )
     .fromTo(
       elem2,
       {
-        duration: 2,
+        duration: 50,
         ease: "bounce.out",
         y: "200px",
         rotate: "-20",
@@ -35,7 +36,7 @@ export const hiddenText = (elem, elem2, elem3) => {
     )
     .fromTo(
       elem3,
-      { duration: 20, ease: "power1.in", opacity: 0 },
+      { duration: 50, ease: "power1.in", opacity: 0 },
       { opacity: 1 }
     );
 };
