@@ -20,32 +20,34 @@ const AboutUs = () => {
               className="flex flex-col items-center lg:items-start"
               key={`dev-info-${i}`}
             >
-              <div className="mb-4">
-                <Image
-                  className="rounded-full "
-                  src={dev.imgSrc}
-                  alt={dev.imgAlt}
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div
-                id="info"
-                className="lg:flex text-center lg:text-left lg:w-2/5 lg:pl-16"
-              >
-                <div id="name" className="mb-4 lg:flex lg:flex-col">
-                  <h3 className="text-lg lg:text-2xl">{dev.name}</h3>
-                  <p className="text-xs text-gray-200 lg:mt-1 lg:text-lg ">
-                    SOFTWARE DEVELOPER
-                  </p>
+              <a href={dev.website} rel="noreferrer" target="_blank">
+                <div className="mb-4">
+                  <Image
+                    className="rounded-full "
+                    src={dev.imgSrc}
+                    alt={dev.imgAlt}
+                    width={200}
+                    height={200}
+                  />
                 </div>
-                {/* <div
+                <div
+                  id="info"
+                  className="lg:flex text-center lg:text-left lg:w-2/5 lg:pl-16"
+                >
+                  <div id="name" className="mb-4 lg:flex lg:flex-col">
+                    <h3 className="text-lg lg:text-2xl">{dev.name}</h3>
+                    <p className="text-xs text-gray-200 lg:mt-1 lg:text-lg ">
+                      SOFTWARE DEVELOPER
+                    </p>
+                  </div>
+                  {/* <div
                   id="ian-description"
                   className="text-sm lg:pl-16 lg:text-xs "
                 >
                   <p>{dev.description}</p>
                 </div> */}
-              </div>
+                </div>
+              </a>
             </div>
           ))}
         </div>
@@ -69,6 +71,7 @@ const devInfo = [
     imgAlt: "The developer staring into the camera.",
     description:
       "4 years of experience with all types of things and I know just about all there is to know so dont teach me anything. ",
+    website: "https://www.icld.io/",
   },
   {
     name: "Ethan William Pierce",
@@ -76,5 +79,6 @@ const devInfo = [
     imgAlt: "The developer staring into the camera.",
     description:
       "Listen here you young whippersnapper. This is all the things I know how to do, nothing more. All I know is that I know nothing.",
+    website: "https://ethanpierce.netlify.app",
   },
 ];

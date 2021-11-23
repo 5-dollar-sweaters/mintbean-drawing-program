@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import useSWR from 'swr';
-import { fetcher } from 'lib/swr/fetcher';
+import useSWR from "swr";
+import { fetcher } from "lib/swr/fetcher";
 
 export const DeleteDrawingById = ({ id, handleRefresh }) => {
   const [deleteIt, setDeleteIt] = useState(false);
@@ -19,7 +19,7 @@ export const DeleteDrawingById = ({ id, handleRefresh }) => {
     try {
       await setDeleteIt(true);
       await handleRefresh();
-      await console.log('delete something');
+      await console.log("delete something");
     } catch (error) {
       console.error(error);
     } finally {
