@@ -5,12 +5,9 @@ const ControlCenter = () => {
     useStore();
 
   return (
-    <div className='flex flex-col items-center w-full h-full p-6 bg-gray-800 rounded-md justify-evenly'>
+    <div className='z-30 flex flex-col items-center w-full h-full p-6 bg-gray-800 rounded-md justify-evenly'>
       {/* Brush Stroke */}
-      <label
-        htmlFor='brushStroke'
-        className='-mb-2 text-xs font-bold text-white'
-      >
+      <label htmlFor='brushStroke' className='text-xs font-bold text-white'>
         Brush Stroke
       </label>
 
@@ -26,14 +23,15 @@ const ControlCenter = () => {
       />
 
       {/* Lazy Length*/}
+
       <label
         htmlFor='lazyLength'
-        className='-mb-2 text-xs font-bold text-white'
+        className='hidden -mb-2 text-xs font-bold text-white'
       >
         Lazy Length
       </label>
       <input
-        className='relative w-full h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none'
+        className='relative hidden w-full h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none'
         type='range'
         name='lazyLength'
         min={1}
