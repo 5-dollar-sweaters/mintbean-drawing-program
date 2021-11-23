@@ -12,5 +12,30 @@ export const scrollingCards = (elem) =>
       end: "bottom 200px",
     },
     duration: 5,
-    // x: -100,
+    x: -100,
   });
+
+const tl = gsap.timeline();
+export const hiddenText = (elem, elem2, elem3) => {
+  tl.fromTo(
+    elem,
+    { duration: 10, ease: "power1.out", y: "-200px", rotate: "-20" },
+    { y: "0px", rotate: 0 }
+  )
+    .fromTo(
+      elem2,
+      {
+        duration: 2,
+        ease: "bounce.out",
+        y: "200px",
+        rotate: "-20",
+      },
+      { y: 0, rotate: 0 },
+      "-=0.4"
+    )
+    .fromTo(
+      elem3,
+      { duration: 20, ease: "power1.in", opacity: 0 },
+      { opacity: 1 }
+    );
+};

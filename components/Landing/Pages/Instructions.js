@@ -18,9 +18,11 @@ const Instructions = () => {
   useEffect(() => {
     Draggable.create(cards, {
       type: "x",
-      edgeResistance: 0.65,
-      bounds: { width: "0px" },
+      edgeResistance: 1,
+      bounds: { width: "200px" },
       inertia: true,
+      lockAxis: true,
+      allowNativeTouchScrolling: false,
     });
   }, []);
 
@@ -34,13 +36,13 @@ const Instructions = () => {
         <div id="top">
           <div
             id="title"
-            className="  flex justify-evenly text-4xl lg:text-6xl pt-16 text-white font-fancy "
+            className="  flex justify-evenly text-4xl  lg:text-6xl pt-16  text-white font-fancy "
           >
             <h1>A helping hand</h1>
           </div>
           <div
             id="description"
-            className=" flex text-center lg:text-2xl pt-8 text-white"
+            className=" flex text-center flex-col lg:text-2xl pt-8 px-6 text-white"
           >
             <h2>
               Struggling to get started? <br></br>Scroll down to see a list of
@@ -52,7 +54,7 @@ const Instructions = () => {
           <div
             id="cards"
             ref={(el) => (cards = el)}
-            className="relative inline-grid grid-cols-6 gap-32 pl-2 "
+            className="relative inline-grid grid-cols-6 gap-36 pl-2 "
           >
             {instructions.map((instruction, i) => {
               return (
