@@ -6,9 +6,10 @@ import useWindowDimensions from 'utils/useWindowDimensions';
 
 const CanvasComponent = () => {
   const canvasReference = useRef(null);
-  const [canvasRef, setCanvasRef] = useState();
+  // const [canvasRef, setCanvasRef] = useState();
   const { width, height } = useWindowDimensions();
-  const { lazyRadius1, brushRadius1, brushColor } = useStore();
+  const { canvasRef, setCanvasRef, lazyRadius1, brushRadius1, brushColor } =
+    useStore();
 
   const [canvasW, setCanvasW] = useState(1000);
   const [canvasH, setCanvasH] = useState(900);
@@ -34,7 +35,7 @@ const CanvasComponent = () => {
 
   return (
     <CanvasDraw
-      ref={canvasReference}
+      ref={canvasRef}
       hideGrid={true}
       canvasWidth={canvasW}
       canvasHeight={canvasH}
