@@ -1,6 +1,10 @@
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { hoverText } from './animation';
 
 const AboutUs = () => {
+  let hover = useRef(null);
+
   return (
     <div
       id='container'
@@ -13,17 +17,17 @@ const AboutUs = () => {
       >
         <span className='w-full h-0.5  bg-white  mb-6 lg:hidden' />
 
-        <div className='lg:flex justify-evenly relative w-full lg:w-100 lg:space-y-0 space-y-10 '>
+        <div className='lg:flex justify-evenly relative w-full lg:space-y-0 space-y-10 '>
           {devInfo.map((dev, i) => (
             <div
               id='developer'
-              className='flex flex-col items-center lg:items-start'
+              className='flex flex-col  items-center lg:items-start '
               key={`dev-info-${i}`}
             >
               <a href={dev.website} rel='noreferrer' target='_blank'>
-                <div className='mb-4'>
+                <div className='mb-4  '>
                   <Image
-                    className='rounded-full '
+                    className='rounded-full hover:opacity-100 opacity-90 transition-all ease-in-out '
                     src={dev.imgSrc}
                     alt={dev.imgAlt}
                     width={200}
@@ -40,12 +44,6 @@ const AboutUs = () => {
                       SOFTWARE DEVELOPER
                     </p>
                   </div>
-                  {/* <div
-                  id="ian-description"
-                  className="text-sm lg:pl-16 lg:text-xs "
-                >
-                  <p>{dev.description}</p>
-                </div> */}
                 </div>
               </a>
             </div>

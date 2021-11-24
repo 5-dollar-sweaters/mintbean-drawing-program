@@ -39,3 +39,7 @@ export const buttonColor = (button, button2) => {
     )
     .to(button2, { opacity: 0 }, '-=0.8');
 };
+
+export const hoverText = (hover) => {
+  gsap.fromTo(hover, { scale: 1 }, { scale: 1.1 });
+};
