@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
 import { useStore } from 'lib/zustand/store';
-import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+// import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 import DeleteButton from '../ControlCenter/DeleteButton';
 
@@ -28,14 +28,14 @@ const LoadControlMenu = () => {
 
   const handleRefresh = async () => {
     setSuccess(true);
-    confetti({
-      particleCount: 1000,
-      startVelocity: 35,
-      spread: 360,
-      colors: ['#C41200'],
-      shapes: ['circle'],
-      gravity: 0.1,
-    });
+    // confetti({
+    //   particleCount: 1000,
+    //   startVelocity: 35,
+    //   spread: 360,
+    //   colors: ['#C41200'],
+    //   shapes: ['circle'],
+    //   gravity: 0.1,
+    // });
     setTimeout(() => {
       setSuccess(false);
     }, 3000);

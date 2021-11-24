@@ -22,7 +22,6 @@ const DeleteButton = ({ id, handleRefresh }) => {
     try {
       await setDeleteIt(true);
       await handleRefresh();
-      await console.log('delete something');
     } catch (error) {
       console.error(error);
     } finally {

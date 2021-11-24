@@ -37,5 +37,6 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-debug-screens'),
     require('tailwindcss-textshadow'),
+    require('@tailwindcss/forms'),
   ],
 };

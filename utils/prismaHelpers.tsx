@@ -23,7 +23,6 @@
 // }
 
 export async function saveData(formData) {
-  console.log('form', formData);
   const response = await fetch(`${process.env.NEXT_APP_URL}/api/saveDrawing`, {
     method: 'POST',
     body: JSON.stringify(formData),

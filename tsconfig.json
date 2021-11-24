@@ -27,7 +27,9 @@
 
     "pages/api/saveDrawing.tsx", // "pages/api/saveDrawing.js",
     "pages/api/drawings.js",
-    "lib/zustand/store.js"
+    "lib/zustand/store.js",
+    "components/Draw/Sections/Canvas/CanvasComponent.tsx",
+    "components/Draw/Sections/Canvas/CanvasComponent.tsx"
   ],
   "exclude": ["node_modules"]
 }

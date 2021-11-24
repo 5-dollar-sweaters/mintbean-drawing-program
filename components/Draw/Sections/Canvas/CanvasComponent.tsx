@@ -5,10 +5,11 @@ import { useStore } from 'lib/zustand/store';
 import useWindowDimensions from 'utils/useWindowDimensions';
 
 const CanvasComponent = () => {
-  const canvasReference = useRef();
-  const [canvasRef, setCanvasRef] = useState();
+  const canvasReference = useRef(null);
+  // const [canvasRef, setCanvasRef] = useState();
   const { width, height } = useWindowDimensions();
-  const { lazyRadius1, brushRadius1, brushColor } = useStore();
+  const { canvasRef, setCanvasRef, lazyRadius1, brushRadius1, brushColor } =
+    useStore();
 
   const [canvasW, setCanvasW] = useState(1000);
   const [canvasH, setCanvasH] = useState(900);
@@ -28,9 +29,16 @@ const CanvasComponent = () => {
     }
   }, [width]);
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    setCanvasRef(canvasReference);
+  }, []);
+
+>>>>>>> 7ebe066b2e070ce690e5e50d508534302fd9699a
   return (
     <CanvasDraw
-      ref={canvasReference}
+      ref={canvasRef}
       hideGrid={true}
       canvasWidth={canvasW}
       canvasHeight={canvasH}
