@@ -12,7 +12,6 @@ const User = ({ userFromNav }) => {
     try {
       await router.push('/api/auth/logout');
       await setActiveUser({});
-      alert('logged out');
     } catch (error) {}
   };
 
