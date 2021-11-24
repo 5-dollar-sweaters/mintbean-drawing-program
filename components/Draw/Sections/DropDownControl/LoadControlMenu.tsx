@@ -6,9 +6,12 @@ import { shootConfetti } from 'utils/confettiHelper';
 import { Dialog, Transition } from '@headlessui/react';
 
 import DeleteButton from '../ControlCenter/DeleteButton';
+import { useUser } from '@auth0/nextjs-auth0';
+import { LoginToLoadFiles } from './LoginPrompt';
 
 const LoadControlMenu = () => {
   const { activeUser, canvasRef } = useStore();
+  const { user } = useUser();
   const [activeDrawing, setActiveDrawing] = useState('');
   const [success, setSuccess] = useState(false);
   const [checkDelete, setCheckDelete] = useState(false);
@@ -54,6 +57,10 @@ const LoadControlMenu = () => {
                 <div className='items-center justify-center w-full text-4xl text-center text-blue-500 font-fancy'>
                   <div>Success!</div>
                   <div>You Deleted it!</div>
+                </div>
+              ) : !user ? (
+                <div className='flex flex-col items-center justify-center w-full text-center h-44'>
+                  <LoginToLoadFiles />
                 </div>
               ) : (
                 data.map((drawing, i) => (

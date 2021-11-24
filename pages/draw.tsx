@@ -47,7 +47,6 @@ const Draw: NextPage = (
             </div>
           </div>
         </div>
-        <div>delete me</div>
       </div>
     );
   };

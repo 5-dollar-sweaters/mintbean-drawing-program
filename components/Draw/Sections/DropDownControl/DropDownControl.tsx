@@ -1,25 +1,25 @@
 import { useControlStore, useStore } from 'lib/zustand/store';
+import { useState } from 'react';
 import {
   FiChevronDown,
   FiChevronUp,
   FiSave,
   FiDownloadCloud,
   FiRefreshCw,
+  FiDelete,
+  FiXCircle,
 } from 'react-icons/fi';
 import { BsPencil } from 'react-icons/bs';
 
-import ColorGrid from '../ColorPicker/ColorGrid';
-import ColorPickerComponent from '../ColorPicker/ColorPickerComponent';
-import SaveDialog from '../ControlCenter/SaveDialog';
 import ColorControlMenu from './ColorControlMenu';
 import SaveControlMenu from './SaveControlMenu';
-import UserDrawings from '../ControlCenter/UserDrawings';
 import LoadControlMenu from './LoadControlMenu';
 
 const DropDownControl = () => {
   const { setShowControls, showControls, control, setControl } =
     useControlStore();
   const { canvasRef } = useStore();
+  const [rotate, setRotate] = useState(false);
 
   const handleSaveControls = () => {
     if (showControls && control === 'save') {
@@ -54,7 +54,7 @@ const DropDownControl = () => {
   return (
     <div className='w-full'>
       <div className='absolute left-0 z-50 w-full h-12 bg-gray-100 '>
-        <nav className='flex flex-row items-center justify-between w-full h-full px-4 pl-40 lg:justify-start lg:space-x-16 lg:'>
+        <nav className='flex flex-row items-center justify-between w-full h-full px-4 lg:pl-40 lg:justify-start lg:space-x-16 lg:'>
           {showControls ? (
             <FiChevronUp
               className={`  text-3xl ${buttonStyles}`}
@@ -67,8 +67,10 @@ const DropDownControl = () => {
             />
           )}
           <FiRefreshCw
-            className={buttonStyles}
-            onClick={() => canvasRef.current.undo()}
+            className={` ${buttonStyles} ${rotate && ' -rotate-45'}`}
+            onClick={async () => {
+              await canvasRef.current.undo();
+            }}
           />
           <BsPencil className={buttonStyles} onClick={handleColorControls} />
 
