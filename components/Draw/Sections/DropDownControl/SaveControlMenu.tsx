@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useControlStore, useSaveStore, useStore } from 'lib/zustand/store';
 import { saveData } from 'utils/prismaHelpers';
 import { useForm } from 'react-hook-form';
+import SaveModal from '../ControlCenter/SaveModal';
 
 const SaveControlMenu = () => {
   const { showSaveBox, setShowSaveBox } = useSaveStore();
@@ -35,11 +36,16 @@ const SaveControlMenu = () => {
     }
   };
 
+  const handleCloseModal = () => {
+    setItSaved(false);
+  };
+
   const buttonStyle =
     'w-11/12 py-1 text-gray-100 transition-all duration-300   bg-gray-400 rounded-md hover:bg-gray-400 hover:text-gray-600   ';
 
   return (
     <div>
+      <SaveModal itSaved={itSaved} handleCloseModal={handleCloseModal} />
       {itSaved ? (
         <div className='flex flex-col'>
           <h1>Nice! You saved your drawing!</h1>{' '}
@@ -60,7 +66,7 @@ const SaveControlMenu = () => {
             onSubmit={handleSubmit(onSubmit)}
             className='flex flex-col items-center justify-center h-full '
           >
-            <h1 className='mb-6 text-3xl'>Name that beauty!</h1>
+            <h1 className='mb-6 text-3xl'>Save that beauty!</h1>
             <input
               id='title'
               {...register('title', { required: true })}

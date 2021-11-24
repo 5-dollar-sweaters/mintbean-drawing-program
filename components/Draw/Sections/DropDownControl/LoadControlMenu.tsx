@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
 import { useStore } from 'lib/zustand/store';
+import { Dialog, Transition } from '@headlessui/react';
+
 // import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 import DeleteButton from '../ControlCenter/DeleteButton';
@@ -74,7 +76,7 @@ const LoadControlMenu = () => {
                     className='flex flex-row items-center justify-between py-1'
                   >
                     <button
-                      className={`px-2 py-1 text-sm text-left capitalize rounded-sm hover:bg-white w-3/4 ${
+                      className={`px-2 py-1 text-sm text-left capitalize rounded-sm hover:bg-white  ease-in-out  transition-all duration-300 w-3/4 ${
                         activeDrawing === drawing.id
                           ? 'bg-white rounded-md border  shadow-sm'
                           : null
