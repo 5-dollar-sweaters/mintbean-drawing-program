@@ -31,18 +31,18 @@ const Draw: NextPage = (
           <title>Gahw Drahw</title>
           <link rel='icon' href='/favicon.ico' />
         </Head>
-        <div className='flex flex-col items-center w-full h-full mx-auto lg:justify-between 2xl:w-9/12 xl:w-11/12 lg:h-screen lg:space-y-none lg:flex-row'>
+        <div className='flex flex-col items-center w-full h-full mx-auto lg:justify-between 2xl:w-9/12 xl:w-11/12 lg:h-screen '>
           <div className='flex justify-center lg:flex-row'>
-            <div className='hidden mb-6 lg:mx-6 lg:w-2/12 lg:flex'>
+            <div className='hidden mb-6 lg:mx-6 lg:w-2/12 '>
               <ControlMain />
             </div>
-            <div className=' lg:hidden'>
+            <div className=''>
               <DropDownControl />
             </div>
-            <div className='relative mt-12 md:h-screen lg:w-7/12'>
+            <div className='relative mt-12 lg:w-full'>
               <CanvasMain />
             </div>
-            <div className='hidden w-full mx-6 lg:w-2/12 lg:flex'>
+            <div className='hidden w-full mx-6 lg:w-2/12 '>
               <ControlCenter />
             </div>
           </div>

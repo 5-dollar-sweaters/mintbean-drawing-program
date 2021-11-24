@@ -53,8 +53,8 @@ const DropDownControl = () => {
 
   return (
     <div className='w-full'>
-      <div className='absolute left-0 z-50 w-full h-12 bg-gray-100 lg:hidden'>
-        <nav className='flex flex-row items-center justify-between w-full h-full px-4'>
+      <div className='absolute left-0 z-50 w-full h-12 bg-gray-100 '>
+        <nav className='flex flex-row items-center justify-between w-full h-full px-4 pl-40 lg:justify-start lg:space-x-16 lg:'>
           {showControls ? (
             <FiChevronUp
               className={`  text-3xl ${buttonStyles}`}
@@ -81,7 +81,7 @@ const DropDownControl = () => {
       </div>
       {/* Mobile Control */}
       <div
-        className={` left-0 absolute z-10 w-full h-1/3  rounded-lg  bg-gray-900 bg-opacity-20  backdrop-filter backdrop-blur-lg  transition duration-300 ease-in-out  ${
+        className={` left-0 absolute z-10 w-full h-1/3  rounded-lg  bg-gray-900 bg-opacity-20  backdrop-filter backdrop-blur-lg  transition duration-300 ease-in-out lg:mt-8  lg:w-96  lg:left-36 ${
           showControls ? '-translate-y-0' : '-translate-y-full'
         } `}
       >

@@ -15,7 +15,11 @@ const CanvasComponent = () => {
   const [canvasH, setCanvasH] = useState(900);
 
   useEffect(() => {
-    if (width <= 812 && width > 400) {
+    if (width > 1600) {
+      setCanvasW(2400);
+    } else if (width >= 1024) {
+      setCanvasW(1600);
+    } else if (width <= 812 && width > 400) {
       setCanvasW(775);
     } else if (width <= 500) {
       setCanvasW(350);

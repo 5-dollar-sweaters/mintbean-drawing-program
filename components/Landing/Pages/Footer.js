@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div id='container' className='h-full pb-8 bg-gray-900 '>
+    <div id='container' className='z-30 h-full pb-8 bg-gray-900 '>
       <footer className='bg-gray-900' aria-labelledby='footer-heading'>
         <h2 id='footer-heading' className='sr-only'>
           Footer
@@ -10,7 +10,7 @@ const Footer = () => {
             <div className='text-white xl:col-span-1'>
               <a
                 href='/'
-                className='text-lg font-bold tracking-tighter text-blue-400 transition hover:text-blue-700 duration-500 ease-in-out transform tracking-relaxed lg:pr-8'
+                className='text-lg font-bold tracking-tighter text-blue-400 transition duration-500 ease-in-out transform hover:text-blue-700 tracking-relaxed lg:pr-8'
               >
                 {' '}
                 Drawing App
