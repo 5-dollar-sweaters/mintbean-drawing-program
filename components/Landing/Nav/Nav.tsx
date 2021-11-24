@@ -19,8 +19,9 @@ const Nav = () => {
 
   const handleLogIn = async () => {
     try {
-      await router.push('/api/auth/login');
-      mutate();
+      await router.push('/api/auth/login?returnTo=/draw');
+      await mutate();
+      // await router.push('/draw');
     } catch (error) {
       console.log(error);
     } finally {
@@ -34,11 +35,15 @@ const Nav = () => {
         router.pathname === '/draw' && 'bg-gray-700'
       }`}
     >
-      <div className='flex flex-row-reverse items-center justify-between w-11/12 m-auto lg:flex-row lg:justify-center lg:w-10/12 xl:w-8/12 2xl:2-7/12 '>
+      <div
+        className={`flex flex-row-reverse items-center justify-between w-11/12 m-auto lg:flex-row lg:justify-center lg:w-10/12 xl:w-8/12 2xl:2-7/12 ${
+          router.pathname === '/draw' && 'text-white'
+        }`}
+      >
         <div className='items-center lg:w-3/12 lg:flex'>
           {!user ? (
             <button
-              className=' hover:opacity-100 transition-all ease-in-out hover:scale-105 opacity-70 lg:text-xl'
+              className={`transition-all ease-in-out hover:opacity-100 hover:scale-105 opacity-70 lg:text-xl`}
               onClick={() => handleLogIn()}
             >
               LogIn
@@ -95,7 +100,7 @@ const Nav = () => {
             href='https://github.com/5-dollar-sweaters/mintbean-drawing-program'
             rel='noreferrer'
             target='_blank'
-            className='lg:text-xl transition-all ease-in hover:opacity-100 opacity-70 hover:scale-105'
+            className='transition-all ease-in lg:text-xl hover:opacity-100 opacity-70 hover:scale-105'
           >
             Github
           </a>
