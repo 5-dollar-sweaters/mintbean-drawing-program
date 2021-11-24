@@ -1,4 +1,4 @@
-export const LoginToSave = () => {
+const LoginToSave = () => {
   return (
     <div>
       Please{' '}
@@ -27,3 +27,5 @@ export const LoginToLoadFiles = () => {
     </div>
   );
 };
+
+export default LoginToSave;
