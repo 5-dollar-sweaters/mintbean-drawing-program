@@ -1,9 +1,5 @@
 import { gsap } from 'gsap';
 
-export const onClick = (elem) => {
-  elem.addEve;
-};
-
 const tl = gsap.timeline();
 export const hiddenText = (elem, elem2, elem3) => {
   tl.fromTo(
@@ -26,4 +22,24 @@ export const hiddenText = (elem, elem2, elem3) => {
       { ease: 'power1.out', duration: 1.5, opacity: 1 },
       '-=0.5'
     );
+};
+
+const tl2 = gsap.timeline();
+export const buttonColor = (button, button2) => {
+  tl2
+    .to(button2, {
+      backgroundColor: '#1D4ED8',
+      borderColor: '#1D4ED8',
+    })
+    .fromTo(
+      button,
+      { y: 0, color: 'white' },
+      { duration: 1, ease: 'power1.in', y: -50 },
+      '-=0.5'
+    )
+    .to(button2, { opacity: 0 }, '-=0.8');
+};
+
+export const hoverText = (hover) => {
+  gsap.fromTo(hover, { scale: 1 }, { scale: 1.1 });
 };
