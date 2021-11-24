@@ -7,7 +7,7 @@ import { Dialog, Transition } from '@headlessui/react';
 
 import DeleteButton from '../ControlCenter/DeleteButton';
 import { useUser } from '@auth0/nextjs-auth0';
-import { LoginToLoadFiles } from './LoginPrompt';
+import LoginToLoadFiles from './LoginToSave';
 
 const LoadControlMenu = () => {
   const { activeUser, canvasRef } = useStore();

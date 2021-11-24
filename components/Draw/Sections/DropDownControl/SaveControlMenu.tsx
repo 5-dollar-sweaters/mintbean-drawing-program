@@ -4,7 +4,7 @@ import { saveData } from 'utils/prismaHelpers';
 import { useForm } from 'react-hook-form';
 import SaveModal from '../ControlCenter/SaveModal';
 import { useUser } from '@auth0/nextjs-auth0';
-import LoginPrompt, { LoginToSave } from './LoginPrompt';
+import LoginToSave from './LoginToSave';
 
 const SaveControlMenu = () => {
   const { showSaveBox, setShowSaveBox } = useSaveStore();
