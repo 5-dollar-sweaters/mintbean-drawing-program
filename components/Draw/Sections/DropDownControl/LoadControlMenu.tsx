@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
 import { useStore } from 'lib/zustand/store';
+import { shootConfetti } from 'utils/confettiHelper';
 import { Dialog, Transition } from '@headlessui/react';
-
-// import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 import DeleteButton from '../ControlCenter/DeleteButton';
 
@@ -21,7 +20,7 @@ const LoadControlMenu = () => {
 
   useEffect(() => {
     mutate();
-  }, [activeUser, activeDrawing]);
+  }, [activeUser, activeDrawing, setSuccess]);
 
   const handleSelectTitle = (drawing) => {
     setActiveDrawing(drawing.id);
@@ -29,25 +28,19 @@ const LoadControlMenu = () => {
   };
 
   const handleRefresh = async () => {
-    setSuccess(true);
-    // confetti({
-    //   particleCount: 1000,
-    //   startVelocity: 35,
-    //   spread: 360,
-    //   colors: ['#C41200'],
-    //   shapes: ['circle'],
-    //   gravity: 0.1,
-    // });
+    await setSuccess(true);
+    await shootConfetti();
+    await mutate();
     setTimeout(() => {
       setSuccess(false);
-    }, 3000);
+    }, 1000);
   };
 
   return (
     <div>
-      <div className='flex flex-col overflow-y-scroll bg-gray-100 rounded-md shadow-sm w-72 h-80'>
+      <div className='flex flex-col overflow-y-scroll rounded-md shadow-sm bg-gray-50 w-72 h-80'>
         <h1 className='sticky top-0 flex flex-col py-3 mb-3 text-center bg-gray-200'>
-          <span className='text-xs text-white '> Drawings By</span>{' '}
+          <span className='text-xs text-white '>Drawings By</span>{' '}
           <span className='text-xl text-gray-700 font-fancy'>
             {activeUser.name}
           </span>
@@ -58,39 +51,38 @@ const LoadControlMenu = () => {
           ) : data ? (
             <>
               {success ? (
-                <div className='w-full text-center font-fancy'>
+                <div className='items-center justify-center w-full text-4xl text-center text-blue-500 font-fancy'>
                   <div>Success!</div>
-                  <button
-                    onClick={() => {
-                      setSuccess(false);
-                      mutate();
-                    }}
-                  >
-                    List
-                  </button>
+                  <div>You Deleted it!</div>
                 </div>
               ) : (
                 data.map((drawing, i) => (
-                  <div
-                    key={`drawing-title-${i}`}
-                    className='flex flex-row items-center justify-between py-1'
-                  >
-                    <button
-                      className={`px-2 py-1 text-sm text-left capitalize rounded-sm hover:bg-white  ease-in-out  transition-all duration-300 w-3/4 ${
-                        activeDrawing === drawing.id
-                          ? 'bg-white rounded-md border  shadow-sm'
-                          : null
-                      }`}
-                      key={`user-drawing-${i}`}
-                      onClick={() => handleSelectTitle(drawing)}
+                  <>
+                    <span className='block w-full h-px bg-gray-300' />
+                    <div
+                      key={`drawing-title-${i}`}
+                      className='flex flex-row items-center justify-between py-1 text-gray-700'
                     >
-                      {drawing?.title}
-                    </button>
-                    <DeleteButton
-                      id={drawing?.id}
-                      handleRefresh={handleRefresh}
-                    />
-                  </div>
+                      <button
+                        className={`px-2 py-1 text-sm text-left capitalize rounded-sm hover:bg-white  ease-in-out  transition-all duration-300  w-5/6 ${
+                          activeDrawing === drawing.id
+                            ? 'bg-white rounded-md border  shadow-sm'
+                            : null
+                        }`}
+                        key={`user-drawing-${i}`}
+                        onClick={() => handleSelectTitle(drawing)}
+                      >
+                        {drawing?.title}
+                      </button>
+                      <div className='w-1/6'>
+                        <DeleteButton
+                          id={drawing?.id}
+                          title={drawing?.title}
+                          handleRefresh={handleRefresh}
+                        />
+                      </div>
+                    </div>
+                  </>
                 ))
               )}
             </>

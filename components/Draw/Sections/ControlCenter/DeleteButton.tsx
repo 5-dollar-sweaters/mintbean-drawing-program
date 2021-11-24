@@ -2,9 +2,8 @@ import { useState, useEffect, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import useSWR from 'swr';
 import { fetcher } from 'lib/swr/fetcher';
-import { FiDelete } from 'react-icons/fi';
 
-const DeleteButton = ({ id, handleRefresh }) => {
+const DeleteButton = ({ id, handleRefresh, title }) => {
   const [deleteIt, setDeleteIt] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -32,10 +31,10 @@ const DeleteButton = ({ id, handleRefresh }) => {
   return (
     <div>
       <button
-        className='text-xs text-gray-400   rounded-md px-0.5 py-1 hover:text-gray-500  text-shadow-sm'
+        className='text-xs text-gray-400   rounded-md px-0.5 py-1 hover:text-gray-500  '
         onClick={() => setDialogOpen(true)}
       >
-        <span className='mx-3 text-sm'>X</span>
+        <span className='mx-3 text-sm text-red-300'>X</span>
         {/* delete */}
       </button>
 
@@ -59,13 +58,7 @@ const DeleteButton = ({ id, handleRefresh }) => {
             >
               <Dialog.Overlay className='fixed inset-0 backdrop-filter backdrop-blur-md' />
             </Transition.Child>
-            {/* This element is to trick the browser into centering the modal contents. */}
-            {/* <span
-              className='hidden sm:inline-block sm:align-middle sm:h-screen'
-              aria-hidden='true'
-            >
-              &#8203;
-            </span> */}
+
             <Transition.Child
               as={Fragment}
               enter='ease-out duration-300'
@@ -80,7 +73,8 @@ const DeleteButton = ({ id, handleRefresh }) => {
                   WAIT!!!
                 </h1>
                 <h3 className='m-auto mb-4 text-sm text-center text-gray-600 w-44'>
-                  Are you sure you want to delete this beautiful drawing?
+                  Are you sure you want to delete{'   '}
+                  <span className='text-lg text-gray-400'>{title}</span>?
                 </h3>
                 <button
                   className='w-40 p-2 mb-2 text-sm text-white bg-red-400 rounded-lg shadow-md hover:bg-red-500 hover:shadow-lg'
