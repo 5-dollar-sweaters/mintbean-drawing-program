@@ -13,21 +13,21 @@ const AboutUs = () => {
       <a name='About'></a>
       <div
         id='box'
-        className='flex flex-col   items-center justify-center w-9/12 py-8 m-auto sm:w-9/12 md:w-8/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12 3xl:w-7/12 lg:items-start lg:pt-14'
+        className='flex flex-col items-center justify-center w-9/12 py-8 m-auto sm:w-9/12 md:w-8/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12 3xl:w-7/12 lg:items-start lg:pt-14'
       >
         <span className='w-full h-0.5  bg-white  mb-6 lg:hidden' />
 
-        <div className='lg:flex justify-evenly relative w-full lg:space-y-0 space-y-10 '>
+        <div className='relative w-full space-y-10 lg:flex justify-evenly lg:space-y-0 '>
           {devInfo.map((dev, i) => (
             <div
               id='developer'
-              className='flex flex-col  items-center lg:items-start '
+              className='flex flex-col items-center lg:items-start '
               key={`dev-info-${i}`}
             >
               <a href={dev.website} rel='noreferrer' target='_blank'>
-                <div className='mb-4  '>
+                <div className='mb-4 '>
                   <Image
-                    className='rounded-full hover:opacity-100 opacity-90 transition-all ease-in-out '
+                    className='transition-all ease-in-out rounded-full hover:opacity-100 opacity-90 '
                     src={dev.imgSrc}
                     alt={dev.imgAlt}
                     width={200}
@@ -36,11 +36,13 @@ const AboutUs = () => {
                 </div>
                 <div
                   id='info'
-                  className='lg:flex text-center lg:text-left lg:w-2/5 lg:pl-16 '
+                  className='text-center lg:flex lg:text-left lg:w-2/5 lg:pl-16 '
                 >
                   <div id='name' className='mb-4 lg:flex lg:flex-col'>
-                    <h3 className='text-lg lg:text-2xl'>{dev.name}</h3>
-                    <p className='text-xs text-gray-200 lg:mt-1 lg:text-lg '>
+                    <h3 className='text-lg font-bold lg:text-2xl'>
+                      {dev.name}
+                    </h3>
+                    <p className='text-xs font-light text-gray-200 lg:mt-1 lg:text-lg'>
                       SOFTWARE DEVELOPER
                     </p>
                   </div>

@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         fancy: ['Abril Fatface', ...defaultTheme.fontFamily.sans],
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Lato', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         yllw: '#FFF00D',

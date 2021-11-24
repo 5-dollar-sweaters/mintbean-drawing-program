@@ -35,25 +35,28 @@ const Main = () => {
           className='flex flex-col justify-center mt-8 lg:mt-0 flex-nowrap'
         >
           <div id='main' className='flex flex-col '>
-            <div className=' after:contents overflow-hidden'>
+            <div className='overflow-hidden after:contents'>
               <h1
                 ref={(el) => (text = el)}
-                className='  text-5xl lg:text-7xl  font-fancy '
+                className='text-5xl lg:text-7xl font-fancy bg-'
               >
                 Colorful
               </h1>
             </div>
-            <div className=' after:contents overflow-hidden '>
+            <div className='overflow-hidden after:contents'>
               <h2
                 ref={(el) => (text2 = el)}
-                className=' py-2 text-3xl lg:text-3xl '
+                className='py-2 text-3xl font-normal lg:text-3xl'
               >
                 Digital artwork at your
                 <br /> fingertips
               </h2>
             </div>
           </div>
-          <div id='description' className='flex w-64 text-sm lg:text-1xl'>
+          <div
+            id='description'
+            className='flex w-64 mb-3 text-sm font-light font-lg:text-1xl'
+          >
             <h3 ref={(el) => (text3 = el)}>
               Whether you are coloring inside the lines or thinking outside the
               box, its never been easier to get your ideas down
@@ -64,11 +67,13 @@ const Main = () => {
             className='flex flex-col items-center pt-4 mb-8 lg:mb-0 '
           >
             <button
-              className=' after:contents overflow-hidden flex flex-row items-center justify-center w-24 h-10 font-bold text-black transition-all ease-in-out border-2 border-black rounded-full cursor-pointer bg-grey-100 hover:bg-blue-700 hover:border-blue-700 hover:text-white'
+              className='flex flex-row items-center justify-center w-24 h-10 overflow-hidden font-bold text-black transition-all ease-in-out border border-black rounded-full cursor-pointer after:contents bg-grey-100 hover:bg-blue-700 hover:border-blue-700 hover:text-white'
               onClick={() => handleTryIt()}
               ref={(el) => (button2 = el)}
             >
-              <span ref={(el) => (button = el)}>Try It</span>
+              <span className='font-normal' ref={(el) => (button = el)}>
+                Try It
+              </span>
             </button>
           </div>
         </div>
