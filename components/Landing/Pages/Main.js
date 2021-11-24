@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { gsap } from 'gsap';
 import { hiddenText } from './animation';
+import { buttonColor } from './animation';
 
 const Main = () => {
   const router = useRouter();
@@ -12,20 +13,8 @@ const Main = () => {
   let button2 = useRef(null);
 
   const handleTryIt = async () => {
-    const tl2 = gsap.timeline();
     try {
-      await tl2
-        .to(button2, {
-          backgroundColor: '#1D4ED8',
-          borderColor: '#1D4ED8',
-        })
-        .fromTo(
-          button,
-          { y: 0, color: 'white' },
-          { duration: 1, ease: 'power1.in', y: -50 },
-          '-=0.5'
-        )
-        .to(button2, { opacity: 0 }, '-=0.8');
+      await buttonColor(button, button2);
       await router.push('/draw');
     } catch (error) {}
   };
