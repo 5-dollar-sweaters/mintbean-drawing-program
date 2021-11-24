@@ -44,8 +44,8 @@ const LoadControlMenu = () => {
   return (
     <div>
       <div className='flex flex-col overflow-y-scroll bg-gray-100 rounded-md shadow-sm w-72 h-80'>
-        <h1 className='sticky top-0 flex flex-col py-3 mb-3 text-center bg-blue-300'>
-          <span className='text-xs text-white font-fancy'> Drawings By</span>{' '}
+        <h1 className='sticky top-0 flex flex-col py-3 mb-3 text-center bg-gray-200'>
+          <span className='text-xs text-white '> Drawings By</span>{' '}
           <span className='text-xl text-gray-700 font-fancy'>
             {activeUser.name}
           </span>

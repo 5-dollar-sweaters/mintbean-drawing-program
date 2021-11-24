@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useControlStore, useSaveStore, useStore } from 'lib/zustand/store';
 import { saveData } from 'utils/prismaHelpers';
+import { useForm } from 'react-hook-form';
 
 const SaveControlMenu = () => {
   const { showSaveBox, setShowSaveBox } = useSaveStore();
@@ -8,21 +9,26 @@ const SaveControlMenu = () => {
   const { canvasRef, activeUser } = useStore();
   const [title, setTitle] = useState('');
   const [itSaved, setItSaved] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   type SaveData = { data: string; ownerId: string; title: string };
 
-  const handleSaveDrawing = async () => {
+  const onSubmit = async (formData) => {
+    console.log(formData);
     const drawingString = await canvasRef?.current.getSaveData();
     const data: SaveData = {
       data: drawingString,
       ownerId: activeUser?.id,
-      title: title,
+      title: formData?.title,
     };
     try {
       await saveData(data);
       console.log('saved!');
       await setItSaved(true);
-      canvasRef.current.clear();
     } catch (error) {
       console.log('failed at req');
       console.log(error);
@@ -34,7 +40,6 @@ const SaveControlMenu = () => {
 
   return (
     <div>
-      {' '}
       {itSaved ? (
         <div className='flex flex-col'>
           <h1>Nice! You saved your drawing!</h1>{' '}
@@ -43,7 +48,7 @@ const SaveControlMenu = () => {
             onClick={() => {
               setShowSaveBox(false);
               setItSaved(false);
-              // setControl('load');
+              setControl('load');
             }}
           >
             Go Draw Some More
@@ -51,20 +56,25 @@ const SaveControlMenu = () => {
         </div>
       ) : (
         <>
-          <form className='flex flex-col items-center justify-center h-full font-fancy '>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className='flex flex-col items-center justify-center h-full '
+          >
             <h1 className='mb-6 text-3xl'>Name that beauty!</h1>
             <input
+              id='title'
+              {...register('title', { required: true })}
               type='text'
               placeholder='Title your drawing!'
               className='w-full px-3 py-2 mb-3 font-sans rounded-md shadow-md'
               onChange={(e) => setTitle(e.target.value)}
               value={title}
               maxLength={32}
-              required
+              minLength={5}
             />
             <button
+              type='submit'
               className='self-end px-3 py-1 font-sans text-white transition duration-200 ease-in-out bg-gray-600 border border-gray-500 shadow-md rounded-xl hover:bg-gray-400 hover:text-white'
-              onClick={() => handleSaveDrawing()}
             >
               Save
             </button>

@@ -53,7 +53,7 @@ const DropDownControl = () => {
 
   return (
     <div className='w-full'>
-      <div className='absolute left-0 z-50 w-full h-12 bg-blue-100 lg:hidden'>
+      <div className='absolute left-0 z-50 w-full h-12 bg-gray-100 lg:hidden'>
         <nav className='flex flex-row items-center justify-between w-full h-full px-4'>
           {showControls ? (
             <FiChevronUp
@@ -104,12 +104,11 @@ const DropDownControl = () => {
             </div>
           )}
           <div
-            className='absolute bottom-0 z-10 flex flex-row justify-end w-full h-4 pr-4 overflow-hidden transition-all duration-300 bg-gray-200 bg-opacity-50 rounded-b-lg cursor-pointer hover:bg-gray-300 hover:bg-opacity-50 hover:h-6 group'
+            className='absolute bottom-0 z-10 flex flex-row justify-end w-full h-8 pr-4 overflow-hidden transition-all duration-300 bg-gray-100 bg-opacity-50 rounded-b-lg cursor-pointer hover:bg-gray-300 hover:bg-opacity-50 hover:h-6 group'
             onClick={() => setShowControls(false)}
           >
-            <button className='translate-y-10 group-hover:translate-y-0 '>
-              {' '}
-              <FiChevronUp className='text-lg text-white' />
+            <button className=''>
+              <FiChevronUp className='text-3xl text-white' />
             </button>
           </div>
         </div>
