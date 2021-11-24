@@ -1,9 +1,10 @@
-import { useControlStore } from 'lib/zustand/store';
+import { useControlStore, useStore } from 'lib/zustand/store';
 import {
   FiChevronDown,
   FiChevronUp,
   FiSave,
   FiDownloadCloud,
+  FiRefreshCw,
 } from 'react-icons/fi';
 import { BsPencil } from 'react-icons/bs';
 
@@ -18,6 +19,7 @@ import LoadControlMenu from './LoadControlMenu';
 const DropDownControl = () => {
   const { setShowControls, showControls, control, setControl } =
     useControlStore();
+  const { canvasRef } = useStore();
 
   const handleSaveControls = () => {
     if (showControls && control === 'save') {
@@ -64,7 +66,12 @@ const DropDownControl = () => {
               onClick={() => setShowControls(true)}
             />
           )}
+          <FiRefreshCw
+            className={buttonStyles}
+            onClick={() => canvasRef.current.undo()}
+          />
           <BsPencil className={buttonStyles} onClick={handleColorControls} />
+
           <FiDownloadCloud
             className={buttonStyles}
             onClick={handleLoadFileControls}

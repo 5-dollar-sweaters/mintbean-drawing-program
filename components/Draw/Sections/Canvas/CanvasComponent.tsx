@@ -29,13 +29,10 @@ const CanvasComponent = () => {
     }
   }, [width]);
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
     setCanvasRef(canvasReference);
   }, []);
 
->>>>>>> 7ebe066b2e070ce690e5e50d508534302fd9699a
   return (
     <CanvasDraw
       ref={canvasRef}
