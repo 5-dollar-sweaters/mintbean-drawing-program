@@ -10,7 +10,7 @@ const AboutUs = () => {
       id='container'
       className='flex flex-col w-full h-auto text-sm text-white lg:h-auto lg:flex-row lg:flex-1 from-purple-300 to-blue-700 bg-gradient-to-l '
     >
-      <a name='About'></a>
+      <a id='About'></a>
       <div
         id='box'
         className='flex flex-col items-center justify-center w-9/12 py-8 m-auto sm:w-9/12 md:w-8/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12 3xl:w-7/12 lg:items-start lg:pt-14'

@@ -24,11 +24,11 @@ const Main = () => {
   }, []);
 
   return (
-    <>
+    <div className=' md:my-36 lg:my-44'>
       <a name='Main'></a>
       <div
         id='container'
-        className='flex flex-col items-center lg:h-screen lg:flex-row justify-evenly bg-grey-100'
+        className='flex flex-col items-center md:flex-row justify-evenly bg-grey-100 '
       >
         <div
           id='content'
@@ -67,7 +67,7 @@ const Main = () => {
             className='flex flex-col items-center pt-4 mb-8 lg:mb-0 '
           >
             <button
-              className='flex flex-row items-center justify-center w-24 h-10 overflow-hidden font-bold text-black transition-all ease-in-out border border-black rounded-full cursor-pointer after:contents bg-grey-100 hover:bg-blue-700 hover:border-blue-700 hover:text-white'
+              className='flex flex-row items-center justify-center w-24 overflow-hidden font-bold text-black transition-all ease-in-out border border-black rounded-full cursor-pointer h-9 after:contents bg-grey-100 hover:bg-blue-700 hover:border-blue-700 hover:text-white'
               onClick={() => handleTryIt()}
               ref={(el) => (button2 = el)}
             >
@@ -78,13 +78,13 @@ const Main = () => {
           </div>
         </div>
         {/* Video */}
-        <div className='relative w-96 h-72'>
+        <div className='relative m-4 mb-6 overflow-hidden border-2 border-black rounded-md'>
           <video loop autoPlay muted className='object-fill w-full h-full'>
-            <source src='/pokemon.mp4' type='video/mp4' />
+            <source src='/drawing-cropped.mp4' type='video/mp4' />
           </video>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
