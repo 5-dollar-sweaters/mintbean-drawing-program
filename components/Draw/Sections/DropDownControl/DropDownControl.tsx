@@ -110,7 +110,7 @@ const DropDownControl = () => {
             onClick={() => setShowControls(false)}
           >
             <button className=''>
-              <FiChevronUp className='text-3xl text-white' />
+              <FiChevronUp className='text-3xl text-black' />
             </button>
           </div>
         </div>

@@ -24,7 +24,7 @@ const Main = () => {
   }, []);
 
   return (
-    <div className=' md:my-36 lg:my-44'>
+    <div className='w-full m-auto md:my-36 lg:my-44 md:w-10/12 xl:w-8/12'>
       <a name='Main'></a>
       <div
         id='container'
@@ -32,13 +32,13 @@ const Main = () => {
       >
         <div
           id='content'
-          className='flex flex-col justify-center mt-8 lg:mt-0 flex-nowrap'
+          className='flex flex-col justify-center mt-8 lg:mt-0 flex-nowrap md:w-1/2'
         >
           <div id='main' className='flex flex-col '>
             <div className='overflow-hidden after:contents'>
               <h1
                 ref={(el) => (text = el)}
-                className='text-5xl lg:text-7xl font-fancy bg-'
+                className='w-full text-5xl lg:text-7xl font-fancy'
               >
                 Colorful
               </h1>
@@ -78,8 +78,8 @@ const Main = () => {
           </div>
         </div>
         {/* Video */}
-        <div className='relative m-4 mb-6 overflow-hidden border-2 border-black rounded-md'>
-          <video loop autoPlay muted className='object-fill w-full h-full'>
+        <div className='relative m-4 mb-6 overflow-hidden border-2 border-black rounded-md md:w-1/2'>
+          <video loop autoPlay muted className='object-fill w-96'>
             <source src='/drawing-cropped.mp4' type='video/mp4' />
           </video>
         </div>

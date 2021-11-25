@@ -58,37 +58,16 @@ const Nav = () => {
           onClick={() => {
             router.pathname === '/' ? router.push('/draw') : router.push('/');
           }}
-          className='flex flex-col items-center justify-start cursor-pointer lg:justify-center lg:w-5/12'
+          className='flex flex-col items-center justify-start w-full cursor-pointer lg:justify-center'
         >
           <div
-            onMouseEnter={() => setChangeTitle(true)}
-            onMouseLeave={() => setChangeTitle(false)}
-            className={`text-2xl font-fancy lg:text-4xl  h-12 flex items-center
-             ${router.pathname === '/draw' && 'text-white'}`}
+            className={`text-2xl font-fancy transition-all duration-200 hover:scale-110  lg:text-4xl  h-12 flex items-center hover:text-gray-700
+             ${
+               router.pathname === '/draw' && 'text-white hover:text-gray-200'
+             }`}
           >
-            {router.pathname === '/draw' ? (
-              <div className='flex flex-row items-center transition-all duration-200 group'>
-                <div
-                  className={` -translate-x-56 absolute  transition-all duration-200 ${
-                    changeTitle && '-translate-x-0'
-                  }`}
-                >
-                  Head Home
-                </div>
-
-                <div
-                  className={` absolute transition-all duration-200 ease-in-out lg:hover:scale-105 ${
-                    changeTitle && '-translate-x-56'
-                  }`}
-                >
-                  Drawing App
-                </div>
-              </div>
-            ) : (
-              <div>Drawing App</div>
-            )}
+            Drawing App
           </div>
-          {/* <div className='text-xs '>by $5sweater</div> */}
         </div>
 
         <div
