@@ -8,7 +8,8 @@ const AboutUs = () => {
   return (
     <div
       id='container'
-      className='flex flex-col w-full h-auto text-sm text-white lg:h-auto lg:flex-row lg:flex-1 from-purple-300 to-blue-700 bg-gradient-to-l '
+      className='flex flex-col w-full h-auto text-sm text-gray-800 bg-gray-200 lg:h-auto lg:flex-row lg:flex-1 '
+      // className='flex flex-col w-full h-auto text-sm text-white lg:h-auto lg:flex-row lg:flex-1 from-purple-300 to-blue-700 bg-gradient-to-l '
     >
       <a id='About'></a>
       <div
@@ -42,7 +43,7 @@ const AboutUs = () => {
                     <h3 className='text-lg font-bold lg:text-2xl'>
                       {dev.name}
                     </h3>
-                    <p className='text-xs font-light text-gray-200 lg:mt-1 lg:text-lg'>
+                    <p className='text-xs font-light text-gray-500 lg:mt-1 lg:text-lg'>
                       SOFTWARE DEVELOPER
                     </p>
                   </div>
