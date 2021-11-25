@@ -79,7 +79,7 @@ const Main = () => {
         </div>
         {/* Video */}
         <div className='relative m-4 mb-6 overflow-hidden border-2 border-black rounded-md md:w-1/2'>
-          <video loop autoPlay muted className='object-fill w-96'>
+          <video loop autoPlay playsInline muted className='object-fill w-96'>
             <source src='/drawing-cropped.mp4' type='video/mp4' />
           </video>
         </div>

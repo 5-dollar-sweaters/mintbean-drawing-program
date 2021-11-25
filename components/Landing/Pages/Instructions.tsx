@@ -54,6 +54,7 @@ const Instructions = () => {
                   <video
                     loop
                     autoPlay
+                    playsInline
                     muted
                     className={`object-cover w-12 h-12 md:h-20 md:w-20 rounded-xl ${
                       item.num % 2 == 0 ? 'mr-4  md:mr-10 ' : 'ml-4 md:ml-8'
