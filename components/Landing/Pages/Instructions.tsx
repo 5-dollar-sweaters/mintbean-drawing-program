@@ -125,7 +125,7 @@ const instructionItems: {
   {
     item: 'Click the load icon to see all of your saved drawings and watch them be recreated in front of your eyes',
     num: 8,
-    imgSrc: '/load-long.mp4',
+    imgSrc: '/load-long2.mp4',
     imgAlt: 'A gif of instructions',
   },
 ];
