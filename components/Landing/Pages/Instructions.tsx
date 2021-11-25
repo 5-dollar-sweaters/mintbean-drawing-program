@@ -95,7 +95,7 @@ const instructionItems: {
   {
     item: 'By creating an account you can save your current drawings and load previous drawings',
     num: 3,
-    imgSrc: '/vids/Tryit.mp4',
+    imgSrc: '/vids/save.mp4',
     imgAlt: 'A gif of instructions',
   },
   {
@@ -107,25 +107,25 @@ const instructionItems: {
   {
     item: 'Click the little arrow at the bottom of the menu or re-Click the pencil to close the menu',
     num: 5,
-    imgSrc: '/vids/Pencil.mp4',
+    imgSrc: '/vids/arrow.mp4',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'If you make a mistake, Click the circle arrows to undo the most recent stroke',
     num: 6,
-    imgSrc: '/vids/Pencil.mp4',
+    imgSrc: '/vids/undo.mp4',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'When you are happy with your drawing, Click the disk icon and name your piece',
     num: 7,
-    imgSrc: '/vids/Pencil.mp4',
+    imgSrc: '/vids/save.mp4',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'Click the load icon to see all of your saved drawings and watch them be recreated in front of your eyes',
     num: 8,
-    imgSrc: '/vids/Pencil.mp4',
+    imgSrc: '/vids/load-long.mp4',
     imgAlt: 'A gif of instructions',
   },
 ];
