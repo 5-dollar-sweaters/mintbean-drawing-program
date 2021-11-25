@@ -1,4 +1,4 @@
-import Main from './Pages/Main';
+import Main from 'components/Landing/Pages/Main';
 import Instructions from './Pages/Instructions';
 import AboutUs from './Pages/AboutUs';
 const Hero = () => {

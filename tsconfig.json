@@ -29,7 +29,8 @@
     "pages/api/drawings.js",
     "lib/zustand/store.js",
     "components/Draw/Sections/Canvas/CanvasComponent.tsx",
-    "components/Draw/Sections/Canvas/CanvasComponent.tsx"
+    "components/Draw/Sections/Canvas/CanvasComponent.tsx",
+    "components/Landing/Pages/Main.js"
   ],
   "exclude": ["node_modules"]
 }
