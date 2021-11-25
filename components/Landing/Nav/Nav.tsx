@@ -40,7 +40,7 @@ const Nav = () => {
           router.pathname === '/draw' && 'text-white'
         }`}
       >
-        <div className='items-center lg:w-3/12 lg:flex'>
+        <div className='items-center w-1/2 lg:w-3/12 lg:flex '>
           {!user ? (
             <button
               className={`transition-all ease-in-out hover:opacity-100 hover:scale-105 opacity-70 lg:text-xl`}
@@ -58,7 +58,7 @@ const Nav = () => {
           onClick={() => {
             router.pathname === '/' ? router.push('/draw') : router.push('/');
           }}
-          className='flex flex-col items-center justify-start w-full cursor-pointer lg:justify-center'
+          className='flex flex-row items-center justify-start w-full cursor-pointer lg:justify-center'
         >
           <div
             className={`text-2xl font-fancy transition-all duration-200 hover:scale-110  lg:text-4xl  h-12 flex items-center hover:text-gray-700

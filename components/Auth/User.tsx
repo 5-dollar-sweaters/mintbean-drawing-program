@@ -16,9 +16,9 @@ const User = ({ userFromNav }) => {
   };
 
   return (
-    <div className='flex flex-col h-12'>
+    <div className='flex flex-col items-end justify-center h-12'>
       <div
-        className='flex flex-row duration-200'
+        className='flex flex-row items-center duration-200'
         // onClick={() => router.push(`/user/${id}`)}
       >
         <div className='h-9 w-9 '>
