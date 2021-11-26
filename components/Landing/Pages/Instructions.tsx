@@ -39,9 +39,8 @@ const Instructions = () => {
           </div>
           <div className='w-10/12 m-auto space-y-4 lg:space-y-6 md:w-9/12 lg:w-8/12 xl:w-7/12 2xl=w-6/12 '>
             {instructionItems.map((item, i) => (
-              <>
+              <div key={i}>
                 <div
-                  key={i}
                   className={`flex flex-row   justify-between    items-center text-xl text-white   ${
                     item.num % 2 === 0 && ' flex-row-reverse  '
                   }`}
@@ -54,16 +53,17 @@ const Instructions = () => {
                     loop
                     autoPlay
                     playsInline
+                    src={item?.imgSrc}
                     muted
                     className={`object-cover w-12 h-12 md:h-20 md:w-20 rounded-xl ${
                       item.num % 2 == 0 ? 'mr-4  md:mr-10 ' : 'ml-4 md:ml-8'
                     }`}
                   >
-                    <source src={require(item?.imgSrc)} type='video/mp4' />
+                    {/* <source src={item?.imgSrc} type='video/mp4' /> */}
                   </video>
                 </div>
                 <span className='block w-full h-px bg-gray-600' />
-              </>
+              </div>
             ))}
           </div>
         </div>
@@ -75,7 +75,7 @@ const Instructions = () => {
 export default Instructions;
 
 const instructionItems: {
-  item: String;
+  item: string;
   num: number;
   imgSrc: any;
   imgAlt: string;
@@ -125,7 +125,7 @@ const instructionItems: {
   {
     item: 'Click the load icon to see all of your saved drawings and watch them be recreated in front of your eyes',
     num: 8,
-    imgSrc: '/load-long2.mp4',
+    imgSrc: '/load-long.mp4',
     imgAlt: 'A gif of instructions',
   },
 ];
