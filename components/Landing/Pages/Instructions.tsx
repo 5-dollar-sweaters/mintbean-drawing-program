@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { Draggable } from 'gsap/dist/Draggable';
-import { instructions } from 'lib/instructionData/instructionData';
 import useWindowDimensions from 'utils/useWindowDimensions';
 
 if (typeof window !== 'undefined') {
