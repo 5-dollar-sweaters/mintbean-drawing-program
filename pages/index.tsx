@@ -1,21 +1,23 @@
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Head from "next/head";
+import Head from 'next/head';
 
-import { useUser } from "@auth0/nextjs-auth0";
-import Hero from "../components/Landing/Hero";
+import { useUser } from '@auth0/nextjs-auth0';
+import Hero from '../components/Landing/Hero';
 
 export default function Home(props) {
   const { user } = useUser();
 
   return (
-    <div className="flex flex-col min-h-screen p-0 m-0 ">
+    <div className='flex flex-col min-h-screen p-0 m-0 '>
       <Head>
-        <title>Colorful</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Colorful | Home</title>
+        <meta
+          name='description'
+          content='Welcome to Colorful, a digital drawing app'
+        />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className="z-10 flex flex-col w-full p-0 m-0 text-black">
+      <div className='z-10 flex flex-col w-full p-0 m-0 text-black'>
         <Hero />
       </div>
     </div>

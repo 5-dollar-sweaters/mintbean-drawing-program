@@ -10,7 +10,11 @@ const Draw: NextPage = (props) => {
   return (
     <div id='container' className='w-full bg-gray-200 '>
       <Head>
-        <title>Gahw Drahw</title>
+        <title>Colorful | Draw</title>
+        <meta
+          name='description'
+          content='Go ahead and make your next masterpiece!'
+        />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className='flex flex-col items-center w-full h-full mx-auto lg:justify-between 2xl:w-9/12 xl:w-11/12 lg:h-screen '>

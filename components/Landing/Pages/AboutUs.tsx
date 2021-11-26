@@ -1,15 +1,11 @@
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { hoverText } from './animation';
 
 const AboutUs = () => {
-  let hover = useRef(null);
-
   return (
     <div
       id='container'
       className='flex flex-col w-full h-auto text-sm text-gray-800 bg-gray-200 lg:h-auto lg:flex-row lg:flex-1 '
-      // className='flex flex-col w-full h-auto text-sm text-white lg:h-auto lg:flex-row lg:flex-1 from-purple-300 to-blue-700 bg-gradient-to-l '
     >
       <a id='About'></a>
       <div
@@ -55,10 +51,6 @@ const AboutUs = () => {
 
         <span className='w-full h-0.5  bg-white  mt-6 lg:mt-20' />
       </div>
-
-      {/* <h1 className="absolute hidden text-black lg:text-6xl font-fancy lg:block right-32 translate-y-36">
-        About Us
-      </h1> */}
     </div>
   );
 };
