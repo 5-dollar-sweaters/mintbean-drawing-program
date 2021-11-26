@@ -89,7 +89,7 @@ const instructionItems: {
   {
     item: 'Or find the LogIn button located at the top of the screen to create an account',
     num: 2,
-    imgSrc: '/login2.mp4',
+    imgSrc: '/logIn2.mov',
     imgAlt: 'A gif of instructions',
   },
   {
