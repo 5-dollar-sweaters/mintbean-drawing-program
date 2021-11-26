@@ -7,7 +7,6 @@ import { fetcher } from 'lib/swr/fetcher';
 import useSWR from 'swr';
 
 const Nav = () => {
-  const [changeTitle, setChangeTitle] = useState(false);
   const { user } = useUser();
   const { activeUser, setActiveUser } = useStore();
   const router = useRouter();
@@ -21,7 +20,6 @@ const Nav = () => {
     try {
       await router.push('/api/auth/login?returnTo=/draw');
       await mutate();
-      // await router.push('/draw');
     } catch (error) {
       console.log(error);
     } finally {

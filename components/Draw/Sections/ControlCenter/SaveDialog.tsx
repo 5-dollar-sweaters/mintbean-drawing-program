@@ -20,7 +20,6 @@ const SaveDialog = () => {
     };
     try {
       await saveData(data);
-      console.log('saved!');
       await setItSaved(true);
       canvasRef.current.clear();
     } catch (error) {

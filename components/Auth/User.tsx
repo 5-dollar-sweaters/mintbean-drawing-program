@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { useStore } from 'lib/zustand/store';
 
 const User = ({ userFromNav }) => {
-  const { image, name, id } = userFromNav;
-  const { activeUser, setActiveUser } = useStore();
+  const { image, name } = userFromNav;
+  const { setActiveUser } = useStore();
   const router = useRouter();
 
   const handleLogOut = async () => {
@@ -17,10 +17,7 @@ const User = ({ userFromNav }) => {
 
   return (
     <div className='flex flex-col items-end justify-center h-12'>
-      <div
-        className='flex flex-row items-center duration-200'
-        // onClick={() => router.push(`/user/${id}`)}
-      >
+      <div className='flex flex-row items-center duration-200'>
         <div className='h-9 w-9 '>
           <Image
             src={image || '/rainbow.png'}
@@ -45,7 +42,6 @@ const User = ({ userFromNav }) => {
           >
             Logout
           </button>
-          {/* <p className='h-4 text-xs text-gray-500'>{userName}</p> */}
         </div>
       </div>
     </div>

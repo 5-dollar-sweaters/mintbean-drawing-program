@@ -4,20 +4,11 @@ import { useStore } from 'lib/zustand/store';
 import { buttonSlide } from './animation';
 
 const ColorGrid = () => {
-  // const [theme, setTheme] = useState(colors);
   const { setBrushColor, canvasRef } = useStore();
   const [current, setCurrent] = useState('');
 
-  // let button = useRef(null);
-  // useEffect(() => {
-  //   buttonSlide(button);
-  // }, []);
-
   return (
-    <div
-      // ref={(el) => (button = el)}
-      className='grid justify-center h-full grid-cols-2 '
-    >
+    <div className='grid justify-center h-full grid-cols-2 '>
       {colors.map((color, i) => (
         <button
           key={`colors-grid-${i}`}

@@ -6,7 +6,6 @@ import useWindowDimensions from 'utils/useWindowDimensions';
 
 const CanvasComponent = () => {
   const canvasReference = useRef(null);
-  // const [canvasRef, setCanvasRef] = useState();
   const { width, height } = useWindowDimensions();
   const { canvasRef, setCanvasRef, lazyRadius1, brushRadius1, brushColor } =
     useStore();

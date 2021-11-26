@@ -20,12 +20,9 @@ const SaveControlMenu = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(activeUser);
-
   type SaveData = { data: string; ownerId: string; title: string };
 
   const onSubmit = async (formData) => {
-    console.log(formData);
     const drawingString = await canvasRef?.current.getSaveData();
     const data: SaveData = {
       data: drawingString,
@@ -34,7 +31,6 @@ const SaveControlMenu = () => {
     };
     try {
       await saveData(data);
-      console.log('saved!');
       await setItSaved(true);
       await reset();
     } catch (error) {

@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { gsap } from 'gsap';
 import { hiddenText } from './animation';
 import { buttonColor } from './animation';
 

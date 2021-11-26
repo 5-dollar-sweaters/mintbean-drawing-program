@@ -6,13 +6,11 @@ const ColorPickerComponent = () => {
   const { brushColor, setBrushColor } = useStore();
 
   return (
-    // <section className={styles.responsive}>
     <HexColorPicker
       color={brushColor}
       onChange={setBrushColor}
       className='w-auto'
     />
-    // </section>
   );
 };
 

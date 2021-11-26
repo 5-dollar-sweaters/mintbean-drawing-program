@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import ColorPickerComponent from './ColorPickerComponent';
 import ColorGrid from './ColorGrid';
 import { entrance } from './animation';
-// import gsap from "gsap";
 
 const ColorMain = () => {
   let intro = useRef(null);
