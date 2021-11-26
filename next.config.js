@@ -1,6 +1,8 @@
 /**
  * @type {import('next').NextConfig}
  **/
+const withVideos = require('next-videos');
+
 const nextConfig = {
   experimental: {
     urlImports: ['https://cdn.skypack.dev'],
@@ -15,3 +17,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+module.exports = withVideos;

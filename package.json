@@ -17,6 +17,7 @@
     "@tailwindcss/forms": "^0.3.4",
     "gsap": "^3.8.0",
     "next": "latest",
+    "next-videos": "^1.4.0",
     "react": "^17.0.2",
     "react-canvas-draw": "^1.2.1",
     "react-colorful": "^5.5.1",

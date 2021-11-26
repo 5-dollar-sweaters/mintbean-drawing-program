@@ -3,7 +3,6 @@ import { gsap } from 'gsap/dist/gsap';
 import { Draggable } from 'gsap/dist/Draggable';
 import { instructions } from 'lib/instructionData/instructionData';
 import useWindowDimensions from 'utils/useWindowDimensions';
-import { BsDiamond } from 'react-icons/bs';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(Draggable);
@@ -60,7 +59,7 @@ const Instructions = () => {
                       item.num % 2 == 0 ? 'mr-4  md:mr-10 ' : 'ml-4 md:ml-8'
                     }`}
                   >
-                    <source src={item.imgSrc} type='video/mp4' />
+                    <source src={require(item?.imgSrc)} type='video/mp4' />
                   </video>
                 </div>
                 <span className='block w-full h-px bg-gray-600' />
@@ -78,13 +77,13 @@ export default Instructions;
 const instructionItems: {
   item: String;
   num: number;
-  imgSrc: string;
+  imgSrc: any;
   imgAlt: string;
 }[] = [
   {
     item: 'Get started as a guest user by clicking the "Try It" button',
     num: 1,
-    imgSrc: '/Tryit.mp4',
+    imgSrc: '/TryIt.mp4',
     imgAlt: '',
   },
   {
