@@ -40,13 +40,13 @@ const Nav = () => {
           router.pathname === '/draw' && 'text-white'
         }`}
       >
-        <div className='items-center w-1/2 lg:w-3/12 lg:flex '>
+        <div className='items-center w-1/2 text-right lg:text-left lg:w-3/12 lg:flex'>
           {!user ? (
             <button
-              className={`transition-all ease-in-out hover:opacity-100 hover:scale-105 opacity-70 lg:text-xl`}
+              className={`transition-all      ease-in-out hover:opacity-100 hover:scale-105 opacity-70 lg:text-xl`}
               onClick={() => handleLogIn()}
             >
-              LogIn
+              Login
             </button>
           ) : !data ? (
             <div>...loading</div>
