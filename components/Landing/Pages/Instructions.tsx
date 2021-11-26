@@ -83,7 +83,7 @@ const instructionItems: {
   {
     item: 'Get started as a guest user by clicking the "Try It" button',
     num: 1,
-    imgSrc: '/TryIt.mp4',
+    imgSrc: '/tryIt.mov',
     imgAlt: '',
   },
   {
@@ -95,37 +95,37 @@ const instructionItems: {
   {
     item: 'By creating an account you can save your current drawings and load previous drawings',
     num: 3,
-    imgSrc: '/save.mp4',
+    imgSrc: '/save.mov',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'Once you are at the canvas, Click the pencil to choose a color and adjust your brush size',
     num: 4,
-    imgSrc: '/Pencil.mp4',
+    imgSrc: '/pencil.mov',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'Click the little arrow at the bottom of the menu or re-Click the pencil to close the menu',
     num: 5,
-    imgSrc: '/arrow.mp4',
+    imgSrc: '/arrow1.mov',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'If you make a mistake, Click the circle arrows to undo the most recent stroke',
     num: 6,
-    imgSrc: '/undo.mp4',
+    imgSrc: '/undo.mov',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'When you are happy with your drawing, Click the disk icon and name your piece',
     num: 7,
-    imgSrc: '/save.mp4',
+    imgSrc: '/save.mov',
     imgAlt: 'A gif of instructions',
   },
   {
     item: 'Click the load icon to see all of your saved drawings and watch them be recreated in front of your eyes',
     num: 8,
-    imgSrc: '/load-long.mp4',
+    imgSrc: '/load-long.mov',
     imgAlt: 'A gif of instructions',
   },
 ];
