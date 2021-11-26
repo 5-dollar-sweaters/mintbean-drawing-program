@@ -16,17 +16,17 @@ const AboutUs = () => {
         id='box'
         className='flex flex-col items-center justify-center w-9/12 py-8 m-auto sm:w-9/12 md:w-8/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12 3xl:w-7/12 lg:items-start lg:pt-14'
       >
-        <span className='w-full h-0.5  bg-white  mb-6 lg:hidden' />
+        <span className='w-full h-0.5  bg-white  mb-6  lg:mb-20 ' />
 
-        <div className='relative w-full space-y-10 lg:flex justify-evenly lg:space-y-0 '>
+        <div className='relative flex flex-col w-full space-y-10 md:flex-row justify-evenly md:space-y-0 '>
           {devInfo.map((dev, i) => (
             <div
               id='developer'
-              className='flex flex-col items-center lg:items-start '
-              key={`dev-info-${i}`}
+              className='flex flex-col items-center justify-center m-auto transition-all duration-200 ease-in hover:scale-110 '
+              key={`dev-info-${i} `}
             >
               <a href={dev.website} rel='noreferrer' target='_blank'>
-                <div className='mb-4 '>
+                <div className='flex flex-col items-center justify-center m-auto mb-4 '>
                   <Image
                     className='transition-all ease-in-out rounded-full hover:opacity-100 opacity-90 '
                     src={dev.imgSrc}
@@ -35,11 +35,11 @@ const AboutUs = () => {
                     height={200}
                   />
                 </div>
-                <div
-                  id='info'
-                  className='text-center lg:flex lg:text-left lg:w-2/5 lg:pl-16 '
-                >
-                  <div id='name' className='mb-4 lg:flex lg:flex-col'>
+                <div id='info' className='text-center lg:flex '>
+                  <div
+                    id='name'
+                    className='items-center justify-center mb-4 lg:flex lg:flex-col'
+                  >
                     <h3 className='text-lg font-bold lg:text-2xl'>
                       {dev.name}
                     </h3>
@@ -53,7 +53,7 @@ const AboutUs = () => {
           ))}
         </div>
 
-        <span className='w-full h-0.5  bg-white  mt-6 lg:hidden' />
+        <span className='w-full h-0.5  bg-white  mt-6 lg:mt-20' />
       </div>
 
       {/* <h1 className="absolute hidden text-black lg:text-6xl font-fancy lg:block right-32 translate-y-36">
